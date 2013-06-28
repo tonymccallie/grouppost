@@ -1,0 +1,24 @@
+<div class="span12">
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner centered">
+			<div class="navbar-buttons">
+				<div class="btn-group three-button">
+					<a href="#" class="btn" data-bind="tap: loadSelectedAdmin">Followers</a>
+					<a href="#" class="btn btn-primary" data-bind="tap: loadAdminSent">Sent Messages</a>
+					<a href="#" class="btn" data-bind="tap: loadAdminMore">More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="navbar-spacer"></div>
+	<ul class="nav nav-tabs nav-stacked" data-bind="with: selectedAdmin">
+		<!-- ko foreach: Message -->
+			<li class="message">
+				<a href="#" data-bind="click: $root.viewMessage">
+					<h4 data-bind="text:message"></h4>
+					<p data-bind="text:GroupSegment.title">Group Name</p>
+				</a>
+			</li>
+		<!-- /ko -->
+	</ul>
+</div>
