@@ -2,7 +2,7 @@
 <widget id="net.greyback.grouppost" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>GroupPost</name>
     <description>
-        Mobile Communications for Groups that is Simple - Fast - Free.  This is not Another Time-Consuming Social Media App and it solves the Problems of Group Texting & Email.
+        Mobile Communications for Groups that is Simple - Fast - Free.  This is not Another Time-Consuming Social Media App and it solves the Problems of Group Texting and Email.
     </description>
     <author email="info@greyback.net" href="http://greyback.net">
         GreyBack Labs, LP.
