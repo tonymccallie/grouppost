@@ -13,6 +13,7 @@
 	<div data-bind="with:selectedGroup">
 		<h4 data-bind="text:Group.name">Name</h4>
 		<h6 data-bind="text:Group.city+', '+Group.state">Location</h6>
+		<h6 data-bind="text: $root.selectedSearchGroup().GroupFollow.length+' Followers'">Followers</h6>
 		<p data-bind="text:Group.descr">Description</p>
 		<a href="#" data-bind="tap: $root.inviteGroup" class="btn btn-block btn-large btn-primary">Invite</a>
 		<a href="#" data-bind="tap: $root.unfollowGroup" class="btn btn-block btn-large">Unfollow</a>

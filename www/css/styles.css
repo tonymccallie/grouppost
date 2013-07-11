@@ -295,15 +295,16 @@ form textarea {
 	background-color:rgba(54,88,135,1);
 }
 
-#activity {
+#refresh {
 	position:absolute;
 	top:5px;
-	left:10px;
+	left:15px;
 	margin:0;
 	font-size: 20px;
 	line-height: 20px;
 	padding: 4px 4px 2px 6px;
 }
+
 
 .icon-spin {
 	-webkit-animation: spin 1s infinite linear;
@@ -312,7 +313,7 @@ form textarea {
 #compose {
 	position:absolute;
 	top:5px;
-	right:10px;
+	right:15px;
 	margin:0;
 }
 
@@ -330,13 +331,13 @@ form textarea {
 }
 
 .three-button .btn {
-	width: 40%;
+	width: 30%;
 	padding: 4px 0;
+	font-size: 12px;
 }
 
-.three-button .btn:first-child,
 .three-button .btn:last-child {
-	width: 30%;
+	width: 40%;
 }
 
 .message {
@@ -394,6 +395,16 @@ form textarea {
 	position: absolute;
 	right: 10px;
 	top: 24px;
+}
+
+.subgroup {
+	position: relative;
+}
+
+.subgroup .badge {
+	position: absolute;
+	right: 10px;
+	top: 19px;
 }
 
 .grouplist {

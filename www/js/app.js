@@ -25,6 +25,7 @@ function AppViewModel() {
 			return self.messages().new_messages() + self.new_replies();
 		});
 		self.requests = ko.observable(0);
+		self.subgroupcount = ko.observable(0);
 
 
 	//CRON JOBS / SYSTEM FUNCTIONS
@@ -89,10 +90,22 @@ function AppViewModel() {
 			self.selectedMessage().Message.htmlmessage = ko.observable(messagetext);
 			loadPage('messages/details');
 		}
-		self.loadGroup = function(group) {
+		self.loadGroupX = function(group) {
 			self.selectedGroup(group);
+			self.selectedSearchGroup(group.Group);
 			loadPage('groups/page/home');
 		}
+		
+		self.loadGroup = function(group) {
+			request('ajax/groups/view/group:'+group.group_id,self.processGroup);
+		}
+		
+		self.processGroup = function(group) {
+			self.selectedGroup(group);
+			self.selectedSearchGroup(group);
+			loadPage('groups/page/home');
+		}
+		
 		self.loadGroupMessages = function() {
 			request('ajax/messages/latest/user:'+ self.user().user().id +'/group:'+self.selectedGroup().Group.id,function(data) {
 				var groupMessages = [];
@@ -108,9 +121,15 @@ function AppViewModel() {
 			loadPage('messages/latest');
 		}
 		
-		self.loadChooseGroup = function() { loadPage('messages/choose_group'); }
+		self.loadChooseGroup = function() {
+			if(self.user().admin().length > 0) {
+				loadPage('messages/choose_group');
+			} else {
+				loadPage('groups/list/admin');	
+			}
+		}
 		self.loadSelectedAdmin = function() { loadPage('groups/admin/home'); }
-		self.loadAdminMore = function() { loadPage('groups/admin/more'); }
+		self.loadAdminFollowers = function() { loadPage('groups/admin/followers'); }
 		self.loadAdminAdmins = function() { loadPage('groups/admin/admins'); }
 		self.loadAdminSent = function() { loadPage('groups/admin/sent'); }
 		self.loadSelectedGroup = function() { loadPage('groups/page/home'); }
@@ -119,6 +138,10 @@ function AppViewModel() {
 		self.loadUserAgreement = function() { loadPage('user/agreement'); }
 		self.loadPrivacy = function() { loadPage('user/privacy'); }
 
+		self.refresh = function() {
+			self.messages().update();
+			self.user().update();
+		}
 
 	//Login
 		self.loadLogin = function() {
@@ -153,6 +176,15 @@ function AppViewModel() {
 		}
 	
 	//Compose
+		self.loadAdminCompose = function() {
+			console.log();
+			var group = {
+				group_id:self.selectedAdmin().Group.id,
+				Group:self.selectedAdmin().Group
+			};
+			self.loadCompose(group);
+		}
+
 		self.loadCompose = function(group) {
 			self.selectedMessageGroup(group);
 			request('ajax/group_segments/list/'+group.group_id,function(data){
@@ -370,6 +402,7 @@ function AppViewModel() {
 		self.loadSubGroups = function() { loadPage('groups/admin/subgroups'); }
 		
 		self.loadSubGroup = function(subgroup) {
+			self.subgroupcount(subgroup.GroupFollow.length);
 			request('ajax/group_segments/edit/subgroup:'+subgroup.id,self.processSubGroup);
 		}
 		
@@ -384,12 +417,14 @@ function AppViewModel() {
 
 			if(isChecked === 'icon-check-empty') {
 			//ADD TO SUBGROUP
+				self.subgroupcount(self.subgroupcount()+1);
 				request('ajax/group_segments/add/user:'+person.id+'/group:'+self.selectedAdmin().Group.id+'/subgroup:'+self.selectedSubGroup().GroupSegment.id,function(data) {
 					value.attr('class','icon-check');
 					$('#subgroup-'+person.id).addClass('admin');
 				});
 			} else {
 			//REMOVE FROM SUBGROUP
+				self.subgroupcount(self.subgroupcount()-1);
 				request('ajax/group_segments/remove/user:'+person.id+'/group:'+self.selectedAdmin().Group.id+'/subgroup:'+self.selectedSubGroup().GroupSegment.id,function(data) {
 					value.attr('class','icon-check-empty');
 					$('#subgroup-'+person.id).removeClass('admin');
@@ -465,6 +500,7 @@ function AppViewModel() {
 		self.loadSearchGroup = function(group) {
 			var group_id = group.Group.id;
 			var following = false;
+			self.selectedSearchGroup(group);
 			$.each(self.user().groups(),function(index,item) {
 				if(item.group_id === group_id) {
 					following = true;
@@ -475,7 +511,6 @@ function AppViewModel() {
 			if(following) {
 				loadPage('groups/page/home');
 			} else {
-				self.selectedSearchGroup(group);
 				loadPage('groups/follow');	
 			}
 		}
@@ -625,7 +660,11 @@ function AppViewModel() {
 	//Sent Messages
 		self.loadSent = function() {
 			//CHECKADMIN
-			request('ajax/users/sent/user:'+self.user().user().id,self.processSent);
+			if(self.user().admin().length > 0) {
+				request('ajax/users/sent/user:'+self.user().user().id,self.processSent);
+			} else {
+				loadPage('groups/list/admin');	
+			}
 		}
 		
 		self.processSent = function(messages) {
@@ -773,7 +812,7 @@ var request = function(url,callback,data,validation,loader,quiet) {
 	if(loader) {
 		$('#loading').show();
 	} else {
-		$('#activity').show();
+		$('#refresh i').addClass('icon-spin');
 	}
 	
 	var options = {
@@ -796,10 +835,10 @@ var request = function(url,callback,data,validation,loader,quiet) {
 		},
 		complete: function(jqXHR, textStatus) {
 			if((textStatus != 'success')&&(!quiet)) {
-				navigator.notification.alert('There was a problem communicating with the server.',null,'GroupPost');
+				//navigator.notification.alert('There was a problem communicating with the server.',null,'GroupPost');
 			}
 			$('#loading').fadeOut();
-			$('#activity').fadeOut();
+			$('#refresh i').removeClass('icon-spin');
 		},
 		dataType: 'json',
 		async: true

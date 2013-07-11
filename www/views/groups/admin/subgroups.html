@@ -4,9 +4,10 @@
 		<ul id="admin_listing" class="nav nav-tabs nav-stacked">
 			<li class="nav-header">Sub-Groups</li>
 			<!-- ko foreach: GroupSegment -->
-			<li>
+			<li class="subgroup">
 				<a href="#" data-bind="tap: $root.loadSubGroup">
-					<h4 data-bind="text: title">SubGroup Name</h4>
+					<h4 data-bind="text: title">SubGroup Name </h4>
+					<span data-bind="text: GroupFollow.length" class="badge">0</span>
 				</a>
 			</li>
 			<!-- /ko -->

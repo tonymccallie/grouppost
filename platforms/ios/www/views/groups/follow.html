@@ -1,0 +1,6 @@
+<div class="span12" data-bind="with: selectedSearchGroup">
+	<h4 data-bind="text: Group.name">Group Name</h4>
+	<h6 data-bind="text: PrimaryAdmin.first_name + ' ' + PrimaryAdmin.last_name">Admin Name</h6>
+	<p data-bind="text: Group.descr"></p>
+	<a class="btn btn-large btn-primary btn-block" data-bind="tap: $root.followGroup">Follow</a>
+</div>

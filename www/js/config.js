@@ -21,12 +21,12 @@ var pushNotification;
 var iosToken = null;
 var isMobile = true;
 var DOMAIN = 'http://www.grouppost.com/';
-/*
+
 var devtest = /localhost/.test(window.location.hostname);		
 if(devtest) {
 	DOMAIN = 'http://localhost/mcl/';
 }
-*/
+
 
 //var DOMAIN = 'http://office.threeleaf.tv:8080/mcl/';
 //var DOMAIN = 'http://localhost/mcl/';
@@ -73,13 +73,15 @@ var app = {
     },
     onDeviceReady: function() {
     	setTimeout(function() {
-	    	pushNotification = window.plugins.pushNotification;
-			pushNotification.register(function(result) { 
-				//GOOD
-				viewModel.iosToken(result);
-			}, function(result) { 
-				//ERROR
-			}, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+			if(typeof window.plugins !== 'undefined') {
+				pushNotification = window.plugins.pushNotification;
+				pushNotification.register(function(result) { 
+					//GOOD
+					viewModel.iosToken(result);
+				}, function(result) { 
+					//ERROR
+				}, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+			}
     	}, 0)
 		
 	    myScroll = new iScroll('content_wrap',{

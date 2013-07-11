@@ -12,7 +12,7 @@
 	<div class="navbar navbar-inverse" id="header">
 		<div class="navbar-inner">
 			<div class="container-fluid" id="logo_bar">
-				<div id="activity"><i class="icon-refresh icon-spin"></i></div>
+				<a href="#" id="refresh" data-bind="fastClick: refresh" class="btn"><i class="icon-refresh"></i></a>
 				<a href="#" id="ios-arrow-left" class="pull-left" data-bind="fastClick: back, visible: History().length">Back</a>
 				<img src="img/header_logo@2x.png" width="175" height="35" border="0"/>
 				<a href="#" id="compose" data-bind="fastClick: loadChooseGroup, visible: user().compose()" class="btn"><i class="icon-edit"></i></a>

@@ -5,7 +5,7 @@ var User = function() {
 	self.groups = ko.observableArray([]);
 	self.admin = ko.observableArray([]);
 	self.messages = ko.observableArray([]);
-	self.compose = ko.observable(false);
+	self.compose = ko.observable(true);
 	self.new_followers = ko.observable(0);
 	
 	self.login = function() {
