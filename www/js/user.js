@@ -9,12 +9,10 @@ var User = function() {
 	self.new_followers = ko.observable(0);
 	
 	self.login = function() {
-		navigator.notification.alert('login');
 		request('ajax/users/login',self.processLogin,$('#login_form').serialize(),self.invalidLogin);
 	}
 	
 	self.invalidLogin = function(errors) {
-		navigator.notification.alert('invalid');
 		if(typeof errors !== 'undefined') {
 			$.each(errors, function(index,value) {
 				$('#login_'+index).after('<label class="error" generated="true" for="reg_email">'+value[0]+'</label>');
@@ -23,7 +21,6 @@ var User = function() {
 	}
 	
 	self.processLogin = function(data) {
-		navigator.notification.alert('process');
 		self.user = ko.observable(data.User);
 		self.update();
 		viewModel.messages().update();
