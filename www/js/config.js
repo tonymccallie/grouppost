@@ -81,8 +81,6 @@ var app = {
 				}
 			}
     	}, 0)
-		alert('regd');
-		navigator.notification.alert('Test',null,'GroupPost');
 	    myScroll = new iScroll('content_wrap',{
 		    bounce: false,
 		    onScrollMove: function() {
