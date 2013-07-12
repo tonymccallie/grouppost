@@ -852,7 +852,7 @@ var request = function(url,callback,data,validation,loader,quiet) {
 		options.type = 'POST';
 		options.data = data;
 	}
-
+	alert(options);
 	$.ajax(options);
 }
 
