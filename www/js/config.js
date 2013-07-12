@@ -75,9 +75,15 @@ var app = {
     	setTimeout(function() {
 			if(typeof window.plugins !== 'undefined') {
 				pushNotification = window.plugins.pushNotification;
+				if (device.platform == 'android' || device.platform == 'Android') {
+					pushNotification.register(successHandler, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
+				} else {
+					pushNotification.register(pushSuccess, pushError {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+				}
+				
 				pushNotification.register(function(result) { 
 					//GOOD
-					viewModel.iosToken(result);
+					
 				}, function(result) { 
 					//ERROR
 				}, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
@@ -109,6 +115,14 @@ var app = {
     }
 };
 
+function pushSuccess(result) {
+	viewModel.iosToken(result);
+}
+
+function pushError(error) {
+	navigator.notification.alert('There was a problem setting up puch notifications: '+error,null,'GroupPost');
+}
+
 function onNotificationAPN(event) {
     if (event.alert) {
 		//navigator.notification.alert(event.alert,null,'GroupPost');
@@ -123,6 +137,23 @@ function onNotificationAPN(event) {
 
     if (event.badge) {
         pushNotification.setApplicationIconBadgeNumber(function() {}, event.badge);
+    }
+}
+
+function onNotificationGCM(e) {
+    switch(e.event) {
+	    case 'registered':
+	    	if ( e.regID.length > 0 ) {
+				viewModel.registrationId(e.regID);
+			}
+			break;
+		case 'message':
+			if(e.foreground) {
+				
+			} else {
+				
+			}
+			break;
     }
 }
 
