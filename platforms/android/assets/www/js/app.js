@@ -836,7 +836,7 @@ var request = function(url,callback,data,validation,loader,quiet) {
 		complete: function(jqXHR, textStatus) {
 			if((textStatus != 'success')&&(!quiet)) {
 				console.log(jqXHR);
-				navigator.notification.alert('There was a problem communicating with the server.',null,'GroupPost');
+				//navigator.notification.alert('There was a problem communicating with the server.',null,'GroupPost');
 			}
 			$('#loading').fadeOut();
 			$('#refresh i').removeClass('icon-spin');

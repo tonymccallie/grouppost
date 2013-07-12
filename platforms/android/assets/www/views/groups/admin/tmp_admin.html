@@ -1,0 +1,11 @@
+<div data-bind="visible: Follower.length > 0">
+			<p data-bind="text: 'Followers (' + Follower.length + ')'">Followers</p>
+			<ul class="nav nav-tabs nav-stacked">
+				<!-- ko foreach: Follower -->
+				<li class="follower">
+					<h4 data-bind="text: first_name + ' ' + last_name">Test User</h4>
+					<button data-bind="tap: $root.removeFollower" class="btn pull-right">Remove</button>
+				</li>
+				<!-- /ko -->
+			</ul>
+		</div>

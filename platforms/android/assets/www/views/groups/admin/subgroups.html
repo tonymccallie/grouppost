@@ -1,0 +1,20 @@
+<div class="span12">
+	<div data-bind="with: selectedAdmin">
+		<h4 data-bind="text: Group.name">Group name</h4>
+		<ul id="admin_listing" class="nav nav-tabs nav-stacked">
+			<li class="nav-header">Sub-Groups</li>
+			<!-- ko foreach: GroupSegment -->
+			<li class="subgroup">
+				<a href="#" data-bind="tap: $root.loadSubGroup">
+					<h4 data-bind="text: title">SubGroup Name </h4>
+					<span data-bind="text: GroupFollow.length" class="badge">0</span>
+				</a>
+			</li>
+			<!-- /ko -->
+			<li>
+				<a href="#" data-bind="fastClick: $root.addSubGroup">Add New Sub-Group</a>
+			</li>
+		</ul>
+
+	</div>
+</div>
