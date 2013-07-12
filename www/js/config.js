@@ -50,7 +50,6 @@ var app = {
 		}, true);
 		document.addEventListener('resume', this.resume, false);
         if (!navigator.userAgent.match(/(iPad|iPhone|Android)/)) {
-        	alert('catch');
         	isMobile = false;
 			navigator.notification = {
 				alert:function (message) {
@@ -68,8 +67,6 @@ var app = {
 				}
 			}; 
 			this.onDeviceReady();
-        } else {
-	        alert('miss');
         }
     },
     onDeviceReady: function() {

@@ -60,5 +60,5 @@
 
     <gap:plugin name="GenericPush" />
 
-    <access origin="http://grouppost.com*" subdomains="true" />
+    <access origin="*" />
 </widget>
