@@ -72,16 +72,14 @@ var app = {
     onDeviceReady: function() {
     	setTimeout(function() {
 			if(typeof window.plugins !== 'undefined') {
-				alert('setup push');
 				pushNotification = window.plugins.pushNotification;
 				if (device.platform == 'android' || device.platform == 'Android') {
-					alert('android');
 					pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
 				} else {
 					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 				}
 			} else {
-				alert('noplugin');
+				//alert('noplugin');
 			}
     	}, 0)
 	    myScroll = new iScroll('content_wrap',{
@@ -118,7 +116,7 @@ function iosSuccess(result) {
 }
 
 function pushError(error) {
-	navigator.notification.alert('There was a problem setting up puch notifications: '+error,null,'GroupPost');
+	navigator.notification.alert('There was a problem setting up push notifications: '+error,null,'GroupPost');
 }
 
 function onNotificationAPN(event) {

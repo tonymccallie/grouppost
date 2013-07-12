@@ -801,7 +801,6 @@ var loadPage = function(href, isBack, callback) {
 }
 
 var request = function(url,callback,data,validation,loader,quiet) {
-	alert('request');
 	if(typeof loader === 'undefined') {
 		loader = true;
 	}
@@ -836,8 +835,8 @@ var request = function(url,callback,data,validation,loader,quiet) {
 		},
 		complete: function(jqXHR, textStatus, errorThrown) {
 			if((textStatus != 'success')&&(!quiet)) {
-				alert(errorThrown);
-				navigator.notification.alert('There was a problem communicating with the server.',null,'GroupPost');
+				//alert(errorThrown);
+				//navigator.notification.alert('There was a problem communicating with the server.',null,'GroupPost');
 			}
 			$('#loading').fadeOut();
 			$('#refresh i').removeClass('icon-spin');
