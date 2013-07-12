@@ -27,7 +27,6 @@ if(devtest) {
 	DOMAIN = 'http://localhost/mcl/';
 }
 
-
 //var DOMAIN = 'http://office.threeleaf.tv:8080/mcl/';
 //var DOMAIN = 'http://localhost/mcl/';
 
@@ -78,15 +77,8 @@ var app = {
 				if (device.platform == 'android' || device.platform == 'Android') {
 					pushNotification.register(successHandler, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
 				} else {
-					pushNotification.register(pushSuccess, pushError {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+					pushNotification.register(pushSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 				}
-				
-				pushNotification.register(function(result) { 
-					//GOOD
-					
-				}, function(result) { 
-					//ERROR
-				}, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 			}
     	}, 0)
 		
