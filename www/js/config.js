@@ -29,7 +29,6 @@ if(devtest) {
 
 //var DOMAIN = 'http://office.threeleaf.tv:8080/mcl/';
 //var DOMAIN = 'http://localhost/mcl/';
-alert('start');
 var app = {
     // Application Constructor
     initialize: function() {
@@ -72,7 +71,6 @@ var app = {
         }
     },
     onDeviceReady: function() {
-    	alert('ondeviceready');
     	setTimeout(function() {
 			if(typeof window.plugins !== 'undefined') {
 				pushNotification = window.plugins.pushNotification;
@@ -83,7 +81,8 @@ var app = {
 				}
 			}
     	}, 0)
-		
+		alert('regd');
+		navigator.notification.alert('Test',null,'GroupPost');
 	    myScroll = new iScroll('content_wrap',{
 		    bounce: false,
 		    onScrollMove: function() {
