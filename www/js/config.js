@@ -75,9 +75,9 @@ var app = {
 			if(typeof window.plugins !== 'undefined') {
 				pushNotification = window.plugins.pushNotification;
 				if (device.platform == 'android' || device.platform == 'Android') {
-					pushNotification.register(successHandler, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
+					pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
 				} else {
-					pushNotification.register(pushSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 				}
 			}
     	}, 0)
@@ -107,7 +107,11 @@ var app = {
     }
 };
 
-function pushSuccess(result) {
+function androidSuccess(result) {
+	navigator.notification.alert('Android Success: '+result,null,'GroupPost');
+}
+
+function iosSuccess(result) {
 	viewModel.iosToken(result);
 }
 
