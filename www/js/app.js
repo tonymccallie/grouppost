@@ -852,8 +852,11 @@ var request = function(url,callback,data,validation,loader,quiet) {
 		options.type = 'POST';
 		options.data = data;
 	}
-	alert(options);
+	try {
 	$.ajax(options);
+	} catch(e) {
+		alert(e);
+	}
 }
 
 var scroll_refresh = function() {
