@@ -29,7 +29,7 @@ if(devtest) {
 
 //var DOMAIN = 'http://office.threeleaf.tv:8080/mcl/';
 //var DOMAIN = 'http://localhost/mcl/';
-
+alert('start');
 var app = {
     // Application Constructor
     initialize: function() {
@@ -51,6 +51,7 @@ var app = {
 		}, true);
 		document.addEventListener('resume', this.resume, false);
         if (!navigator.userAgent.match(/(iPad|iPhone|Android)/)) {
+        	alert('catch');
         	isMobile = false;
 			navigator.notification = {
 				alert:function (message) {
@@ -71,6 +72,7 @@ var app = {
         }
     },
     onDeviceReady: function() {
+    	alert('ondeviceready');
     	setTimeout(function() {
 			if(typeof window.plugins !== 'undefined') {
 				pushNotification = window.plugins.pushNotification;
