@@ -542,12 +542,14 @@ function AppViewModel() {
 	
 	//Invite
 		self.inviteGroup = function(group) {
-			request('ajax/groups/link/group:'+group.group_id,function(data) {
+			request('ajax/groups/link/group:'+group.Group.id,function(data) {
 				//navigator.notification.alert('Invites are currently disabled. The share link: '+data,null,'GroupPost');
+				console.log("sms:?body="+data);
+				window.location.href = "sms:?body="+data;
 				try {
-					window.plugins.smsComposer.showSMSComposer('',data);
+					//window.plugins.smsComposer.showSMSComposer('',data);
 				} catch(e) {
-					console.log(e);
+					//console.log(e);
 				}
 			});
 		}
