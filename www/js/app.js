@@ -542,10 +542,9 @@ function AppViewModel() {
 	
 	//Invite
 		self.inviteGroup = function(group) {
-			request('ajax/groups/link/group:'+group.Group.id,function(data) {
+			request('ajax/groups/link/group:'+group.Group.id+'/admin:1',function(data) {
 				//navigator.notification.alert('Invites are currently disabled. The share link: '+data,null,'GroupPost');
-				console.log("sms:?body="+data);
-				window.location.href = "sms:?body="+data;
+				window.location.href = "mailto:?body="+data;
 				try {
 					//window.plugins.smsComposer.showSMSComposer('',data);
 				} catch(e) {
@@ -559,10 +558,11 @@ function AppViewModel() {
 		self.inviteAdmin = function(group) {
 			request('ajax/groups/link/group:'+self.selectedAdmin().Group.id+'/admin:1',function(data) {
 				//navigator.notification.alert('Invites are currently disabled. The share link: '+data,null,'GroupPost');
+				window.location.href = "mailto:?body="+data;
 				try {
-					window.plugins.smsComposer.showSMSComposer('',data);
+					//window.plugins.smsComposer.showSMSComposer('',data);
 				} catch(e) {
-					console.log(e);
+					//console.log(e);
 				}
 			});
 		}
