@@ -177,7 +177,6 @@ function AppViewModel() {
 	
 	//Compose
 		self.loadAdminCompose = function() {
-			console.log();
 			var group = {
 				group_id:self.selectedAdmin().Group.id,
 				Group:self.selectedAdmin().Group
