@@ -26,6 +26,7 @@ function AppViewModel() {
 		});
 		self.requests = ko.observable(0);
 		self.subgroupcount = ko.observable(0);
+		self.notifications = ko.observableArray([]);
 
 
 	//CRON JOBS / SYSTEM FUNCTIONS
@@ -153,6 +154,50 @@ function AppViewModel() {
 				submitHandler: self.user().login
 			});
 		}
+	
+	//Reset 
+		self.loadReset = function() {
+			loadPage('user/reset',null,self.validateReset);
+		}
+		
+		self.validateReset = function(data) {
+			$('#user_reset').validate({
+				submitHandler: self.user().reset
+			});
+		}
+		
+	//Notifications
+		self.loadNotifications = function() {
+			request('ajax/users/notifications/user:'+self.user().user().id,self.processNotifications);
+		}
+		
+		self.processNotifications = function(data) {
+			self.notifications(data);
+			loadPage('user/notifications');
+		}
+		
+		self.checkNotification = function(notification) {
+			var value = $('#'+notification.id+' i');
+			var isChecked = value.attr('class');
+
+			if(isChecked === 'icon-check-empty') {
+			//CHECK
+				notification.cssclass = 'icon-check';
+				value.attr('class','icon-check');
+			} else {
+			//UNCHECK
+				notification.cssclass = 'icon-check-empty';
+				value.attr('class','icon-check-empty');
+			}	
+		}
+		
+		self.submitNotifications = function() {
+			$('#user_notifications_json').val(ko.toJSON(self.notifications()));
+			request('ajax/users/notifications_update/user:'+self.user().user().id,function(data) {
+				navigator.notification.alert('Your notification preferences have been saved.',null,'GroupPost');
+				loadPage('user/settings');
+			},$('#user_notifications').serialize());
+		}
 
 
 	//Register
@@ -201,7 +246,7 @@ function AppViewModel() {
 	
 	//Load More Messages
 		self.loadMoreMessages = function() {
-			//console.log('me');
+			self.messages().loadMore();
 		}
 	
 	
@@ -645,18 +690,45 @@ function AppViewModel() {
 		self.invalidPassword = function(errors) {
 			if(typeof errors !== 'undefined') {
 				$.each(errors, function(index,value) {
-					$('#user_password_'+index).after('<label class="error" generated="true" for="reg_email">'+value[0]+'</label>');
+					$('#user_password_'+index).after('<label class="error" generated="true" for="reg_email">'+value+'</label>');
 				});
 			}
-
 		}
 		
-		self.processPassword = function(user) {
+		self.processPassword = function(user) {	
 			navigator.notification.alert('You have successfully updated your password.',null,'GroupPost');
 			self.user().update();
 			self.loadMessages();
 		}
 
+	//Change email
+		self.loadEmail = function() {
+			loadPage('user/email',null,self.validateEmail);
+		}
+
+		self.validateEmail = function() {
+			$('#user_email').validate({
+				submitHandler: self.postEmail
+			});
+		}
+		
+		self.postEmail = function(formElement) {
+			request('ajax/users/email',self.processEmail,$(formElement).serialize(),self.invalidEmail);
+		}
+		
+		self.invalidEmail = function(errors) {
+			if(typeof errors !== 'undefined') {
+				$.each(errors, function(index,value) {
+					$('#user_email_'+index).after('<label class="error" generated="true" for="reg_email">'+value+'</label>');
+				});
+			}
+		}
+		
+		self.processEmail = function(user) {	
+			navigator.notification.alert('An email has been sent to the new address to verify the account.',null,'GroupPost');
+			self.user().update();
+			self.loadMessages();
+		}
 
 	//Sent Messages
 		self.loadSent = function() {
@@ -730,8 +802,9 @@ ko.bindingHandlers.tap = {
 				return false;
 			});
 		} else {
-			$(element).bind('click', function() {
+			$(element).bind('click', function(evt) {
 				valueAccessor()(viewModel, event, element);
+				return false;
 			});
 		}
 	}
@@ -744,7 +817,7 @@ ko.applyBindings(viewModel);
 //AJAX Frame Loader
 var loadPage = function(href, isBack, callback) {
 	if(viewModel.user().user === null) {
-		if((href != 'user/register')&&(href != 'user/register_thanks')&&(href != 'user/privacy')&&(href != 'user/agreement')) {
+		if((href != 'user/register')&&(href != 'user/register_thanks')&&(href != 'user/privacy')&&(href != 'user/agreement')&&(href != 'user/reset')) {
 			href = 'user/login';
 		}
 	}
@@ -757,7 +830,7 @@ var loadPage = function(href, isBack, callback) {
 		isBack = false;
 	}
 	var noBack = ['messages/latest','groups/list','groups/search','user/settings'];
-	var noTemplate = ['user/login','user/register','user/register_thanks','groups/add','user/privacy','user/agreement'];
+	var noTemplate = ['user/login','user/register','user/register_thanks','groups/add','user/privacy','user/agreement','user/reset'];
 
 	if(noTemplate.indexOf(href) >= 0) {
 		$('#content_wrap').css({top:0,bottom:0});
@@ -852,8 +925,9 @@ var request = function(url,callback,data,validation,loader,quiet) {
 		options.type = 'POST';
 		options.data = data;
 	}
+
 	try {
-	$.ajax(options);
+		$.ajax(options);
 	} catch(e) {
 		alert(e);
 	}

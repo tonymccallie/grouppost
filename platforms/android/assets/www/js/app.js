@@ -177,7 +177,6 @@ function AppViewModel() {
 	
 	//Compose
 		self.loadAdminCompose = function() {
-			console.log();
 			var group = {
 				group_id:self.selectedAdmin().Group.id,
 				Group:self.selectedAdmin().Group
@@ -543,12 +542,13 @@ function AppViewModel() {
 	
 	//Invite
 		self.inviteGroup = function(group) {
-			request('ajax/groups/link/group:'+group.group_id,function(data) {
+			request('ajax/groups/link/group:'+group.Group.id+'/admin:1',function(data) {
 				//navigator.notification.alert('Invites are currently disabled. The share link: '+data,null,'GroupPost');
+				window.location.href = "mailto:?body="+data;
 				try {
-					window.plugins.smsComposer.showSMSComposer('',data);
+					//window.plugins.smsComposer.showSMSComposer('',data);
 				} catch(e) {
-					console.log(e);
+					//console.log(e);
 				}
 			});
 		}
@@ -558,10 +558,11 @@ function AppViewModel() {
 		self.inviteAdmin = function(group) {
 			request('ajax/groups/link/group:'+self.selectedAdmin().Group.id+'/admin:1',function(data) {
 				//navigator.notification.alert('Invites are currently disabled. The share link: '+data,null,'GroupPost');
+				window.location.href = "mailto:?body="+data;
 				try {
-					window.plugins.smsComposer.showSMSComposer('',data);
+					//window.plugins.smsComposer.showSMSComposer('',data);
 				} catch(e) {
-					console.log(e);
+					//console.log(e);
 				}
 			});
 		}
@@ -833,9 +834,9 @@ var request = function(url,callback,data,validation,loader,quiet) {
 				}
 			}
 		},
-		complete: function(jqXHR, textStatus) {
+		complete: function(jqXHR, textStatus, errorThrown) {
 			if((textStatus != 'success')&&(!quiet)) {
-				console.log(jqXHR);
+				//alert(errorThrown);
 				//navigator.notification.alert('There was a problem communicating with the server.',null,'GroupPost');
 			}
 			$('#loading').fadeOut();
@@ -851,8 +852,11 @@ var request = function(url,callback,data,validation,loader,quiet) {
 		options.type = 'POST';
 		options.data = data;
 	}
-
+	try {
 	$.ajax(options);
+	} catch(e) {
+		alert(e);
+	}
 }
 
 var scroll_refresh = function() {

@@ -221,8 +221,8 @@ form textarea {
 }
 
 .nav-tabs.nav-stacked > li > a:hover {
-	background-color:rgba(140,140,140,.8);
-	border-color:#333;
+/* 	background-color:rgba(140,140,140,.8); */
+/* 	border-color:#333; */
 }
 
 .badge-important {

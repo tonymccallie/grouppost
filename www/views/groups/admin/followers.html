@@ -4,7 +4,7 @@
 			<div class="navbar-buttons">
 				<div class="btn-group three-button">
 					<a href="#" class="btn" data-bind="tap: loadSelectedAdmin">Manage</a>
-					<a href="#" class="btn btn-primary">Followers</a>
+					<a href="#" class="btn btn-primary">Followers <span data-bind="visible: requests() > 0, text: requests" class="badge badge-important"><i class="icon-ok"></i></span></a>
 					<a href="#" class="btn" data-bind="tap: loadAdminSent">Sent Messages</a>
 				</div>
 			</div>

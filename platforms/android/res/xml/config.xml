@@ -67,7 +67,7 @@
     </feature>
     <plugins>
     </plugins>
-    <access origin="http://grouppost.com*" />
+    <access origin="*" />
     <preference name="useBrowserHistory" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="permissions" value="none" />

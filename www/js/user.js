@@ -80,4 +80,21 @@ var User = function() {
 	self.processRegister = function(data) {
 		loadPage('user/register_thanks');
 	}
+	
+	self.reset = function(formData) {
+		request('ajax/users/reset',self.processReset,$('#user_reset').serialize(),self.invalidReset);
+	}
+	
+	self.invalidReset = function(errors) {
+		if(typeof errors !== 'undefined') {
+			$.each(errors, function(index,value) {
+				$('#reset_'+index).after('<label class="error" generated="true" for="reg_email">'+value+'</label>');
+			});
+		}
+	}
+	
+	self.processReset = function(data) {
+		navigator.notification.alert('An email has been sent to this account with instructions on resetting your password.',null,'GroupPost');
+		loadPage('users/login');
+	};
 }

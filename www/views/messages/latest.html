@@ -12,17 +12,16 @@
 	<div data-bind="visible: user().compose()" class="navbar-spacer"></div>
 	<ul class="nav nav-tabs nav-stacked">
 		<!-- ko foreach: messages().latest() -->
-			<li class="message">
+			<li data-bind="attr: { id: 'latest_message_'+Message.id }" class="message">
 				<a href="#" data-bind="click: $root.viewMessage">
 					<h4 data-bind="text:Message.message"></h4>
 					<p data-bind="text:Group.name">Group Name</p>
 				</a>
 			</li>
 		<!-- /ko -->
-			<li data-bind="visible:false" class="message">
-				<a href="#" data-bind="tap: loadMoreMessages">Load More</a>
+			<li class="message">
+				<span data-bind="tap: loadMoreMessages">Load More</span>
 			</li>
-			<li></li>
 	</ul>
 	
 	<div data-bind="visible: messages().latest().length == 0">

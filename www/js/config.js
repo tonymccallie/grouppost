@@ -102,6 +102,7 @@ var app = {
 	    
     },
     resume: function() {
+    	viewModel.messages().loading_more = false;
     	viewModel.messages().update();
 	    loadPage('messages/latest');
     }
