@@ -443,7 +443,7 @@ function AppViewModel() {
 	
 	
 	//SubGroups Admin
-		self.loadSubGroups = function() { loadPage('groups/admin/subgroups'); }
+		self.loadSubGroups = function() { loadPage('groups/subgroups/list'); }
 		
 		self.loadSubGroup = function(subgroup) {
 			self.subgroupcount(subgroup.GroupFollow.length);
@@ -452,7 +452,7 @@ function AppViewModel() {
 		
 		self.processSubGroup = function(subgroup) {
 			self.selectedSubGroup(subgroup);
-			loadPage('groups/admin/subgroup');
+			loadPage('groups/subgroups/view');
 		}
 		
 		self.checkSubGroupMember = function(person) {
@@ -479,7 +479,7 @@ function AppViewModel() {
 		
 	//Add SubGroup
 		self.addSubGroup = function() {
-			loadPage('groups/admin/add_subgroup', null, self.validateAddSubGroup);
+			loadPage('groups/subgroups/add', null, self.validateAddSubGroup);
 		}
 		
 		self.validateAddSubGroup = function() {
@@ -499,7 +499,37 @@ function AppViewModel() {
 			});
 		}
 	
-	
+	//Edit Subgroup
+		self.editSubGroup = function(subgroup) {
+			loadPage('groups/subgroups/edit', null, self.validateEditSubGroup);
+		}
+		
+		self.validateEditSubGroup = function() {
+			$('#edit_sub_group').validate({
+				submitHandler: self.postEditSubGroup
+			});
+		}
+		
+		self.postEditSubGroup = function(formElement) {
+			request('ajax/group_segments/rename',self.processEditSubGroup,$(formElement).serialize(),self.invalidEditSubGroup);
+		}
+		
+		self.invalidEditSubGroup = function(errors) {
+			if(typeof errors !== 'undefined') {
+				$.each(errors, function(index,value) {
+					$('#edit_group_'+index).after('<label class="error" generated="true" for="reg_email">'+value[0]+'</label>');
+				});
+			}
+		}
+		
+		self.processEditSubGroup = function(data) {
+			request('ajax/groups/admin/group:'+self.selectedAdmin().Group.id+'/user:'+self.user().user().id,function(group) {
+				self.selectedAdmin(group);
+				self.loadSubGroups();
+			});
+		}
+		
+		
 	//Delete Subgroup
 		self.deleteSubGroup = function() {
 			navigator.notification.confirm('Are you sure you want to delete this sub-group?',function(response) {

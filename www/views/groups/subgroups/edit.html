@@ -1,0 +1,8 @@
+<div class="span12" data-bind="with: selectedSubGroup">
+	<form id="edit_sub_group">
+		<label for="edit_group_title">Sub-Group Name:</label>
+		<input data-bind="value: GroupSegment.id" name="data[GroupSegment][id]" type="hidden">
+		<input data-bind="value: GroupSegment.title" id="edit_group_title" name="data[GroupSegment][title]" type="text" class="required">
+		<input type="submit" value="Save Sub-Group" class="btn btn-large btn-block"/>
+	</form>
+</div>
