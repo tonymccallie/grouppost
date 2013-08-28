@@ -59,6 +59,11 @@
 	<feature name="http://api.phonegap.com/1.0/notification"/>
 
     <gap:plugin name="com.adobe.plugins.pushplugin" />
+    
+    <feature name="debug-server" required="true">↵
+		<param name="domain" value="http://grouppost.greyback.net:8080"/>↵
+		<param name="key" value="grouppost"/>↵
+	</feature>
 
     <access origin="*" />
 </widget>
