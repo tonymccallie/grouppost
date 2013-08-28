@@ -429,4 +429,8 @@ form textarea {
 		margin-right:0;
 		margin-left:0;
 	}
+	
+	.Android .navbar-fixed-top {
+		top: 46px;
+	}
 }
