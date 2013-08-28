@@ -1,14 +1,14 @@
-<div class="span12">
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner centered">
-			<div class="navbar-buttons">
-				<div class="btn-group two-button">
-					<a href="#" class="btn btn-primary">Latest Messages</a>
-					<a href="#" class="btn" data-bind="tap: loadSent">Sent Messages <span data-bind="text: new_replies, visible: new_replies() > 0" class="badge badge-important">0</span></a>
-				</div>
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner centered">
+		<div class="navbar-buttons">
+			<div class="btn-group two-button">
+				<a href="#" class="btn btn-primary">Latest Messages</a>
+				<a href="#" class="btn" data-bind="tap: loadSent">Sent Messages <span data-bind="text: new_replies, visible: new_replies() > 0" class="badge badge-important">0</span></a>
 			</div>
 		</div>
 	</div>
+</div>
+<div class="span12">
 	<div class="navbar-spacer"></div>
 	<ul class="nav nav-tabs nav-stacked">
 		<!-- ko foreach: messages().latest() -->

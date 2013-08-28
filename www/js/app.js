@@ -986,6 +986,12 @@ $(function() {
 	$('input, textarea').live('blur', function(e) {
 		//window.scrollTo(0,0);
 	});
+	
+	if(typeof device !== 'undefined') {
+		$('body').addClass(device.platform);
+	} else {
+		$('body').addClass('desktop');
+	}
 });
 	
 	
