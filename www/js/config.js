@@ -98,6 +98,13 @@ var app = {
 				}
 			}
 	    });
+	    myScrollObj = function() {
+			self = this;
+			self.moved = false;
+			self.scrollTo = function(a,b) {return true;};
+			self.refresh = function() {return true;};
+	    }
+	    myScrollX = new myScrollObj();
     },
     loaded: function() {
 	    

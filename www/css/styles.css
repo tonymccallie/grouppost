@@ -6,6 +6,9 @@ html,body {
 body {
 	padding:0;
 	background:url(../img/texture.png);
+	-webkit-touch-callout: none;
+	-webkit-highlight-color: rgba(0,0,0,0);
+	-webkit-overflow-scrolling: touch;
 }
 
 .centered {
@@ -92,7 +95,7 @@ form textarea {
 }
 
 #header {
-	position:absolute;
+	position:fixed;
 	top:0;
 	left:0;
 	width:100%;
@@ -108,15 +111,18 @@ form textarea {
 	border-radius:0;
 }
 
-.navbar-fixed-top .navbar-inner {
+#content_wrap .navbar-inner {
 	background-image:none;
 	background-color:rgba(30,30,30,0.7);
-	min-height:30px;
 	border-bottom:none;
 }
 
 .navbar-fixed-top .navbar-inner .btn-group {
 	margin-top:0;
+}
+
+.navbar {
+	margin-bottom: 0;
 }
 
 .navbar-buttons {
@@ -146,10 +152,12 @@ form textarea {
 	bottom:70px;
 	left:0;
 	width:100%;
-	overflow:auto;
+/* 	overflow:auto; */
+	-webkit-overflow-scrolling: touch;
 }
 
-#content {
+.content {
+	-webkit-overflow-scrolling: touch;
 	padding:20px;
 /* 	min-height: 500px; */
 /* 	margin-bottom: -50px; */
@@ -400,7 +408,7 @@ form textarea {
 .message .badge {
 	position: absolute;
 	right: 10px;
-	top: 24px;
+	top: 16px;
 }
 
 .subgroup {
@@ -424,7 +432,8 @@ form textarea {
 }
 
 @media (max-width: 979px) {
-	.navbar-fixed-top {
+	/*
+.navbar-fixed-top {
 		position:fixed;
 		margin-right:0;
 		margin-left:0;
@@ -433,4 +442,5 @@ form textarea {
 	.Android .navbar-fixed-top {
 		top: 42px;
 	}
+*/
 }

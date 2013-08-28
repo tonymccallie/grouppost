@@ -1,8 +1,12 @@
-<div class="span12">
-	<form id="report_form" data-bind="with: selectedGroup" >
-		<label>Reason for reporting?</label>
-		<input type="hidden" name="data[Group][id]" data-bind="value: Group.id" />
-		<textarea name="data[Group][message]" id="report_message" class="required"></textarea>
-		<input type="submit" value="Send Report" class="btn btn-large btn-primary btn-block" />
-	</form>
+<div class="content">
+	<div class="row-fluid">
+		<div class="span12">
+			<form id="report_form" data-bind="with: selectedGroup" >
+				<label>Reason for reporting?</label>
+				<input type="hidden" name="data[Group][id]" data-bind="value: Group.id" />
+				<textarea name="data[Group][message]" id="report_message" class="required"></textarea>
+				<input type="submit" value="Send Report" class="btn btn-large btn-primary btn-block" />
+			</form>
+		</div>
+	</div>
 </div>

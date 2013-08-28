@@ -1,23 +1,26 @@
-<div class="span12">
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner centered">
-			<div class="navbar-buttons">
-				<div class="btn-group three-button">
-					<a href="#" class="btn btn-primary">Manage</a>
-					<a href="#" class="btn" data-bind="tap: loadAdminFollowers">Followers <span data-bind="visible: requests() > 0, text: requests" class="badge badge-important"><i class="icon-ok"></i></span></a>
-					<a href="#" class="btn" data-bind="tap: loadAdminSent">Sent Messages</a>
-				</div>
+<div class="navbar">
+	<div class="navbar-inner centered">
+		<div class="navbar-buttons">
+			<div class="btn-group three-button">
+				<a href="#" class="btn btn-primary">Manage</a>
+				<a href="#" class="btn" data-bind="tap: loadAdminFollowers">Followers <span data-bind="visible: requests() > 0, text: requests" class="badge badge-important"><i class="icon-ok"></i></span></a>
+				<a href="#" class="btn" data-bind="tap: loadAdminSent">Sent Messages</a>
 			</div>
 		</div>
 	</div>
-	<div class="navbar-spacer"></div>
-	<div data-bind="with: selectedAdmin">
-		<h4 data-bind="text: Group.name">Group name</h4>
-		<a href="#" data-bind="tap: $root.loadAdminCompose" class="btn btn-large btn-block btn-primary">Send a Message</a>
-		<a href="#" data-bind="tap: $root.inviteAdmin" class="btn btn-large btn-block btn-primary">Invite</a>
-		<div class="navbar-spacer"></div>
-		<a href="#" class="btn btn-large btn-block" data-bind="click: $root.loadGroupEdit">Edit Group Information</a>
-		<a href="#" class="btn btn-large btn-block" data-bind="click: $root.loadAdminAdmins">Manage Group Admins</a>
-		<a href="#" class="btn btn-large btn-block" data-bind="click: $root.loadSubGroups">Manage Sub-groups</a>
+</div>
+<div class="content">
+	<div class="row-fluid">
+		<div class="span12">
+			<div data-bind="with: selectedAdmin">
+				<h4 data-bind="text: Group.name">Group name</h4>
+				<a href="#" data-bind="tap: $root.loadAdminCompose" class="btn btn-large btn-block btn-primary">Send a Message</a>
+				<a href="#" data-bind="tap: $root.inviteAdmin" class="btn btn-large btn-block btn-primary">Invite</a>
+				<div class="navbar-spacer"></div>
+				<a href="#" class="btn btn-large btn-block" data-bind="click: $root.loadGroupEdit">Edit Group Information</a>
+				<a href="#" class="btn btn-large btn-block" data-bind="click: $root.loadAdminAdmins">Manage Group Admins</a>
+				<a href="#" class="btn btn-large btn-block" data-bind="click: $root.loadSubGroups">Manage Sub-groups</a>
+			</div>
+		</div>
 	</div>
 </div>

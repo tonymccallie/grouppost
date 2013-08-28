@@ -1,33 +1,36 @@
-<div class="span12">
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner centered">
-			<div class="navbar-buttons">
-				<div class="btn-group two-button">
-					<a href="#" class="btn btn-primary">Latest Messages</a>
-					<a href="#" class="btn" data-bind="tap: loadSent">Sent Messages <span data-bind="text: new_replies, visible: new_replies() > 0" class="badge badge-important">0</span></a>
-				</div>
+<div class="navbar">
+	<div class="navbar-inner centered">
+		<div class="navbar-buttons">
+			<div class="btn-group two-button">
+				<a href="#" class="btn btn-primary">Latest Messages</a>
+				<a href="#" class="btn" data-bind="tap: loadSent">Sent Messages <span data-bind="text: new_replies, visible: new_replies() > 0" class="badge badge-important">0</span></a>
 			</div>
 		</div>
 	</div>
-	<div class="navbar-spacer"></div>
-	<ul class="nav nav-tabs nav-stacked">
-		<!-- ko foreach: messages().latest() -->
-			<li data-bind="attr: { id: 'latest_message_'+Message.id }" class="message">
-				<a href="#" data-bind="click: $root.viewMessage">
-					<h4 data-bind="text:Message.message"></h4>
-					<p data-bind="text:Group.name">Group Name</p>
-				</a>
-			</li>
-		<!-- /ko -->
-			<li class="message">
-				<span data-bind="tap: loadMoreMessages">Load More</span>
-			</li>
-	</ul>
-	
-	<div data-bind="visible: messages().latest().length == 0">
-		<h4>Welcome to GroupPost!</h4>
-		<p>This is amazing text about getting started and creating or finding a group....</p>
-		<a class="btn btn-large btn-block btn-primary" href="#" data-bind="tap: loadSearch">Find a Group</a>
-		<a class="btn btn-large btn-block" href="#" data-bind="tap: loadAddGroup">Create a Group</a>
+</div>
+<div class="content">
+	<div class="row-fluid">
+		<div class="span12">
+			<ul class="nav nav-tabs nav-stacked">
+				<!-- ko foreach: messages().latest() -->
+					<li data-bind="attr: { id: 'latest_message_'+Message.id }" class="message">
+						<a href="#" data-bind="click: $root.viewMessage">
+							<h4 data-bind="text:Message.message"></h4>
+							<p data-bind="text:Group.name">Group Name</p>
+						</a>
+					</li>
+				<!-- /ko -->
+					<li class="message">
+						<span data-bind="tap: loadMoreMessages">Load More</span>
+					</li>
+			</ul>
+			
+			<div data-bind="visible: messages().latest().length == 0">
+				<h4>Welcome to GroupPost!</h4>
+				<p>This is amazing text about getting started and creating or finding a group....</p>
+				<a class="btn btn-large btn-block btn-primary" href="#" data-bind="tap: loadSearch">Find a Group</a>
+				<a class="btn btn-large btn-block" href="#" data-bind="tap: loadAddGroup">Create a Group</a>
+			</div>
+		</div>
 	</div>
 </div>

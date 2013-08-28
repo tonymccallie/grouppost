@@ -1,31 +1,34 @@
-<div class="span12">
-	<div data-bind="visible: user().compose()" class="navbar navbar-fixed-top">
-		<div class="navbar-inner centered">
-			<div class="navbar-buttons">
-				<div class="btn-group two-button">
-					<a href="#" class="btn btn-primary">Groups Followed</a>
-					<a href="#" class="btn" data-bind="tap: loadAdminList">Groups Managed <span data-bind="visible: requests() > 0, text: requests" class="badge badge-important"><i class="icon-ok"></i></span></a>
-				</div>
+<div class="navbar">
+	<div class="navbar-inner centered">
+		<div class="navbar-buttons">
+			<div class="btn-group two-button">
+				<a href="#" class="btn btn-primary">Groups Followed</a>
+				<a href="#" class="btn" data-bind="tap: loadAdminList">Groups Managed <span data-bind="visible: requests() > 0, text: requests" class="badge badge-important"><i class="icon-ok"></i></span></a>
 			</div>
 		</div>
 	</div>
-	<div data-bind="visible: user().compose()" class="navbar-spacer"></div>
-	<div data-bind="visible: user().groups().length == 0">
-		<h4>Oops!</h4>
-		<p>You aren't following any groups yet!</p>
-		<p>Interesting text about creating / following groups</p>
-	</div>
-	<div data-bind="visible: user().groups().length > 0">
-		<ul id="group_listing" class="nav nav-tabs nav-stacked">
-			<li class="nav-header">Groups Followed</li>
-			<!-- ko foreach: user().groups -->
-			<li>
-				<a href="#" data-bind="click: $root.loadGroup">
-					<h4 data-bind="text: Group.name">Group Name</h4>
-					<p data-bind="text: Group.city+', '+Group.state">City, State</p>
-				</a>
-			</li>
-			<!-- /ko -->
-		</ul>
+</div>
+<div class="content">
+	<div class="row-fluid">
+		<div class="span12">
+			<div data-bind="visible: user().groups().length == 0">
+				<h4>Oops!</h4>
+				<p>You aren't following any groups yet!</p>
+				<p>Interesting text about creating / following groups</p>
+			</div>
+			<div data-bind="visible: user().groups().length > 0">
+				<ul id="group_listing" class="nav nav-tabs nav-stacked">
+					<li class="nav-header">Groups Followed</li>
+					<!-- ko foreach: user().groups -->
+					<li>
+						<a href="#" data-bind="click: $root.loadGroup">
+							<h4 data-bind="text: Group.name">Group Name</h4>
+							<p data-bind="text: Group.city+', '+Group.state">City, State</p>
+						</a>
+					</li>
+					<!-- /ko -->
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>

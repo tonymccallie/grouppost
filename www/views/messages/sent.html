@@ -1,27 +1,30 @@
-<div class="span12">
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner centered">
-			<div class="navbar-buttons">
-				<div class="btn-group two-button">
-					<a href="#" class="btn" data-bind="tap: loadMessages">Latest Messages</a>
-					<a href="#" class="btn btn-primary">Sent Messages <span data-bind="text: new_replies, visible: new_replies() > 0" class="badge badge-important">0</span></a>
-				</div>
+<div class="navbar">
+	<div class="navbar-inner centered">
+		<div class="navbar-buttons">
+			<div class="btn-group two-button">
+				<a href="#" class="btn" data-bind="tap: loadMessages">Latest Messages</a>
+				<a href="#" class="btn btn-primary">Sent Messages <span data-bind="text: new_replies, visible: new_replies() > 0" class="badge badge-important">0</span></a>
 			</div>
 		</div>
 	</div>
-	<div class="navbar-spacer"></div>
-	<div>
-		<ul class="nav nav-tabs nav-stacked">
-		<!-- ko foreach: sentMessages -->
-			<li class="message">
-				<a href="#" data-bind="tap: $root.viewReply">
-					<h4 data-bind="text:Message.message"></h4>
-					<p data-bind="text:Group.name">Group Name</p>
-					<span class="badge badge-important" data-bind="text: Reply.length, visible: Message.unread > 0">count</span>
-					<span class="badge" data-bind="text: Reply.length, visible: Message.unread == 0">count</span>
-				</a>
-			</li>
-		<!-- /ko -->
-		</ul>
+</div>
+<div class="content">
+	<div class="row-fluid">
+		<div class="span12">
+			<div>
+				<ul class="nav nav-tabs nav-stacked">
+				<!-- ko foreach: sentMessages -->
+					<li class="message">
+						<a href="#" data-bind="tap: $root.viewReply">
+							<h4 data-bind="text:Message.message"></h4>
+							<p data-bind="text:Group.name">Group Name</p>
+							<span class="badge badge-important" data-bind="text: Reply.length, visible: Message.unread > 0">count</span>
+							<span class="badge" data-bind="text: Reply.length, visible: Message.unread == 0">count</span>
+						</a>
+					</li>
+				<!-- /ko -->
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>

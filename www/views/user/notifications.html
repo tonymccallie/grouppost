@@ -1,12 +1,16 @@
-<div class="span12">
-	<p>Adjust your notification settings for all devices.</p>
-	<form id="user_notifications" method="post" action="" class="">
-		<!-- ko foreach: notifications -->	
-			<a class="btn btn-block approval admin" data-bind="tap: $root.checkNotification, attr:{ id: id}">
-				<i data-bind="attr: {class:cssclass}"></i> <span data-bind="text: label">Name</span>
-			</a>
-		<!-- /ko -->
-		<a href="#" data-bind="tap: $root.submitNotifications" class="btn btn-primary btn-block btn-large">Save Notification Preferences</a>
-		<input type="hidden" id="user_notifications_json" name="data[User][notifications]"/>
-	</form>
+<div class="content">
+	<div class="row-fluid">
+		<div class="span12">
+			<p>Adjust your notification settings for all devices.</p>
+			<form id="user_notifications" method="post" action="" class="">
+				<!-- ko foreach: notifications -->	
+					<a class="btn btn-block approval admin" data-bind="tap: $root.checkNotification, attr:{ id: id}">
+						<i data-bind="attr: {class:cssclass}"></i> <span data-bind="text: label">Name</span>
+					</a>
+				<!-- /ko -->
+				<a href="#" data-bind="tap: $root.submitNotifications" class="btn btn-primary btn-block btn-large">Save Notification Preferences</a>
+				<input type="hidden" id="user_notifications_json" name="data[User][notifications]"/>
+			</form>
+		</div>
+	</div>
 </div>
