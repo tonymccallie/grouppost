@@ -344,6 +344,12 @@ form textarea {
 	position: relative;
 }
 
+.message span {
+	display: block;
+	line-height: 20px;
+	padding: 8px 12px;
+}
+
 .message h4 {
 	margin: 5px 0;
 	white-space: nowrap;
