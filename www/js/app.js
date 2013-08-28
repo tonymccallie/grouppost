@@ -989,8 +989,6 @@ $(function() {
 	
 	if(typeof device !== 'undefined') {
 		$('body').addClass(device.platform);
-	} else {
-		$('body').addClass('desktop');
 	}
 });
 	

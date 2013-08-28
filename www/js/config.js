@@ -66,6 +66,7 @@ var app = {
 					callback(converted);
 				}
 			}; 
+			$('body').addClass('desktop');
 			this.onDeviceReady();
         }
     },
