@@ -19,7 +19,7 @@
 var myScroll;
 var pushNotification;
 var iosToken = null;
-var gcmToken = null;
+var registrationId = null;
 var isMobile = true;
 var DOMAIN = 'http://grouppost.greyback.net/';
 
@@ -76,19 +76,17 @@ var app = {
     },
     onDeviceReady: function() {
     	setTimeout(function() {
-			
-    	}, 0);
-    	if(typeof window.plugins !== 'undefined') {
-			pushNotification = window.plugins.pushNotification;
-			if (device.platform == 'android' || device.platform == 'Android') {
-				alert('android');
-				pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
+			if(typeof window.plugins !== 'undefined') {
+				pushNotification = window.plugins.pushNotification;
+				if (device.platform == 'android' || device.platform == 'Android') {
+					//pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
+				} else {
+					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+				}
 			} else {
-				pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+				//alert('noplugin');
 			}
-		} else {
-			//alert('noplugin');
-		}
+    	}, 0)
 	    myScroll = new iScroll('content_wrap',{
 		    bounce: false,
 		    onScrollMove: function() {
@@ -123,8 +121,8 @@ var app = {
 };
 
 function androidSuccess(result) {
-	alert(result);
-	//navigator.notification.alert('Android Success: '+result,null,'GroupPost');
+	viewModel.registrationId(result);
+	navigator.notification.alert('Android Success: '+result,null,'GroupPost');
 }
 
 function iosSuccess(result) {
@@ -132,8 +130,7 @@ function iosSuccess(result) {
 }
 
 function pushError(error) {
-	alert(error);
-	//navigator.notification.alert('There was a problem setting up push notifications: '+error,null,'GroupPost');
+	navigator.notification.alert('There was a problem setting up push notifications: '+error,null,'GroupPost');
 }
 
 function onNotificationAPN(event) {
