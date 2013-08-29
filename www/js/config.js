@@ -124,7 +124,7 @@ var app = {
 
 function androidSuccess(result) {
 	alert(result);
-	navigator.notification.alert('Android Success: '+result,null,'GroupPost');
+	//navigator.notification.alert('Android Success: '+result,null,'GroupPost');
 }
 
 function iosSuccess(result) {
@@ -132,7 +132,8 @@ function iosSuccess(result) {
 }
 
 function pushError(error) {
-	navigator.notification.alert('There was a problem setting up push notifications: '+error,null,'GroupPost');
+	alert(error);
+	//navigator.notification.alert('There was a problem setting up push notifications: '+error,null,'GroupPost');
 }
 
 function onNotificationAPN(event) {
