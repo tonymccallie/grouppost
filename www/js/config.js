@@ -19,6 +19,7 @@
 var myScroll;
 var pushNotification;
 var iosToken = null;
+var gcmToken = null;
 var isMobile = true;
 var DOMAIN = 'http://grouppost.greyback.net/';
 
@@ -78,6 +79,7 @@ var app = {
 			if(typeof window.plugins !== 'undefined') {
 				pushNotification = window.plugins.pushNotification;
 				if (device.platform == 'android' || device.platform == 'Android') {
+					alert('me');
 					pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
 				} else {
 					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
@@ -120,6 +122,7 @@ var app = {
 };
 
 function androidSuccess(result) {
+	gcmToken = result;
 	navigator.notification.alert('Android Success: '+result,null,'GroupPost');
 }
 
