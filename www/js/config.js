@@ -76,18 +76,19 @@ var app = {
     },
     onDeviceReady: function() {
     	setTimeout(function() {
-			if(typeof window.plugins !== 'undefined') {
-				pushNotification = window.plugins.pushNotification;
-				if (device.platform == 'android' || device.platform == 'Android') {
-					console.log('android');
-					pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
-				} else {
-					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
-				}
+			
+    	}, 0);
+    	if(typeof window.plugins !== 'undefined') {
+			pushNotification = window.plugins.pushNotification;
+			if (device.platform == 'android' || device.platform == 'Android') {
+				alert('android');
+				pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
 			} else {
-				//alert('noplugin');
+				pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 			}
-    	}, 0)
+		} else {
+			//alert('noplugin');
+		}
 	    myScroll = new iScroll('content_wrap',{
 		    bounce: false,
 		    onScrollMove: function() {
@@ -122,7 +123,7 @@ var app = {
 };
 
 function androidSuccess(result) {
-	console.log(result);
+	alert(result);
 	navigator.notification.alert('Android Success: '+result,null,'GroupPost');
 }
 
