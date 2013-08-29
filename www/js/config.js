@@ -79,7 +79,7 @@ var app = {
 			if(typeof window.plugins !== 'undefined') {
 				pushNotification = window.plugins.pushNotification;
 				if (device.platform == 'android' || device.platform == 'Android') {
-					alert('me');
+					console.log('android');
 					pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
 				} else {
 					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
@@ -122,7 +122,7 @@ var app = {
 };
 
 function androidSuccess(result) {
-	gcmToken = result;
+	console.log(result);
 	navigator.notification.alert('Android Success: '+result,null,'GroupPost');
 }
 

@@ -105,6 +105,7 @@ form textarea {
 #header .navbar-inner {
 	background-image:-webkit-linear-gradient(rgba(95,95,95,0.75),rgba(0,0,0,0.75));
 	padding:0 5px;
+	width: 100%;
 }
 
 .navbar-inner {
