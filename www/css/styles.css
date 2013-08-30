@@ -94,6 +94,10 @@ form textarea {
 	height:100%;
 }
 
+.container-fluid {
+	padding: 0;
+}
+
 #header {
 	position:fixed;
 	top:0;
