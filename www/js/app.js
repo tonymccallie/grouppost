@@ -766,7 +766,7 @@ function AppViewModel() {
 			if(self.user().admin().length > 0) {
 				request('ajax/users/sent/user:'+self.user().user().id,self.processSent);
 			} else {
-				loadPage('groups/list/admin');	
+				loadPage('groups/list/admin');
 			}
 		}
 		

@@ -374,6 +374,10 @@ form textarea {
 	overflow: hidden;
 }
 
+.sent h4 {
+	margin: 5px 35px 5px 0;
+}
+
 .message p {
 	margin: 0;
 	color: #aaaaaa;
@@ -387,6 +391,10 @@ form textarea {
 .follower {
 	padding: 3px 10px;
 	position: relative;
+}
+
+.follower h5 {
+	margin: 5px 80px 5px 0;
 }
 
 .follower button {
@@ -422,6 +430,10 @@ form textarea {
 
 .subgroup {
 	position: relative;
+}
+
+.subgroup h5 {
+	margin: 5px 35px 5px 0;
 }
 
 .subgroup .badge {

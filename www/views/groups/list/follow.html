@@ -12,9 +12,9 @@
 	<div class="row-fluid">
 		<div class="span12">
 			<div data-bind="visible: user().groups().length == 0">
-				<h4>Oops!</h4>
-				<p>You aren't following any groups yet!</p>
-				<p>Interesting text about creating / following groups</p>
+				<p>You're not yet following any Groups.</p>
+				<a href="#" data-bind="fastClick: loadSearch" class="btn btn-block btn-primary btn-large">Find A Group</a>
+				<a class="btn btn-block btn-primary btn-large" href="#" data-bind="fastClick: loadAddGroup">Create a new Group</a>
 			</div>
 			<div data-bind="visible: user().groups().length > 0">
 				<ul id="group_listing" class="nav nav-tabs nav-stacked">

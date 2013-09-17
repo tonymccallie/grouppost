@@ -47,11 +47,14 @@ var app = {
         
         //This line removes the browser feel
         document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-        document.addEventListener('click', function(e) {
+        
+        /*
+document.addEventListener('click', function(e) {
 			if (e.srcElement.target === "_blank" && e.srcElement.href.indexOf("#phonegap=external") === -1) {
 				e.srcElement.href = e.srcElement.href + "#phonegap=external";
 			}
 		}, true);
+*/
 		document.addEventListener('resume', this.resume, false);
         if (!navigator.userAgent.match(/(iPad|iPhone|Android)/)) {
         	isMobile = false;

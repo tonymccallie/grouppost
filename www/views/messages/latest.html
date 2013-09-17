@@ -20,11 +20,8 @@
 						</a>
 					</li>
 				<!-- /ko -->
-					<li class="message">
-						<span data-bind="tap: loadMoreMessages">Load More</span>
-					</li>
 			</ul>
-			
+			<span class="btn btn-block" data-bind="tap: loadMoreMessages">Load More</span>
 			<div data-bind="visible: messages().latest().length == 0">
 				<h4>Welcome to GroupPost!</h4>
 				<p>This is amazing text about getting started and creating or finding a group....</p>

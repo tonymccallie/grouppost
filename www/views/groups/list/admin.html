@@ -12,8 +12,7 @@
 	<div class="row-fluid">
 		<div class="span12">
 			<div data-bind="visible: user().admin().length == 0">
-				<h4>Oops!</h4>
-				<p>You aren't managing any groups yet!</p>
+				<p>This is where group leaders (Admins) view Replies to Message they've previously sent to Followers.</p>
 			</div>
 			<div data-bind="visible: user().admin().length > 0">
 				<ul id="admin_listing" class="nav nav-tabs nav-stacked">
@@ -29,7 +28,7 @@
 					<!-- /ko -->
 				</ul>
 			</div>
-			<a class="btn btn-block btn-large" href="#" data-bind="tap: loadAddGroup">Create a new Group</a>
+			<a class="btn btn-block btn-large btn-primary" href="#" data-bind="tap: loadAddGroup">Create a new Group</a>
 		</div>
 	</div>
 </div>
