@@ -87,7 +87,7 @@ function AppViewModel() {
 			messagetext = self.selectedMessage().Message.message;
 			messagetext = messagetext.replace(/(\r\n|\n|\r)/igm, "<br/>");
 			messagetext = messagetext.replace(/([^\w\/])(www\.[a-z0-9\-]+\.[a-z0-9\-]+)/igm, "$1http://$2");
-			messagetext = messagetext.replace(/([\w]+:\/\/[\w-?&;#~=\.\/\@]+[\w\/])/igm, "<a target=\"_blank\" href=\"$1\">$1</a>");//preg_replace("/([\w]+:\/\/[\w-?&;#~=\.\/\@]+[\w\/])/i","<a target=\"_blank\" href=\"$1\">$1</a>",messagetext);
+			messagetext = messagetext.replace(/([\w]+:\/\/[\w-?&;#~=\.\/\@]+[\w\/])/igm, "<a href=\"#\" onclick=\"window.open('$1','_systen')\">$1</a>");//preg_replace("/([\w]+:\/\/[\w-?&;#~=\.\/\@]+[\w\/])/i","<a target=\"_blank\" href=\"$1\">$1</a>",messagetext);
 			self.selectedMessage().Message.htmlmessage = ko.observable(messagetext);
 			loadPage('messages/details');
 		}
