@@ -4,15 +4,12 @@
 			<p>Interested in starting your own Group? Start here!</p>
 			<p>Fill out the form below to get started.</p>
 			<p><em>(Fields marked with * are required.)</em></p>
+			<h4>Required Information</h4>
 			<form id="group_add_form">
 				<label for="add_group_name">* Group Name:</label>
 				<input id="add_group_name" name="data[Group][name]" type="text" class="required span12">
 				<label for="add_group_descr">Description:</label>
 				<textarea id="add_group_descr" name="data[Group][descr]" class="span12"></textarea>
-				<label for="add_group_address_1">Address 1:</label>
-				<input id="add_group_address_1" name="data[Group][address_1]" type="text" class="span12">
-				<label for="add_group_address_2">Address 2:</label>
-				<input id="add_group_address_2" name="data[Group][address_2]" type="text" class="span12">
 				<label for="add_group_city">* City:</label>
 				<input id="add_group_city" name="data[Group][city]" type="text" class="required span12">
 				<label for="add_group_state">* State:</label>
@@ -72,10 +69,15 @@
 				</select>
 				<label for="add_group_zip">* Zip:</label>
 				<input id="add_group_zip" name="data[Group][zip]" type="text" class="required span12">
+				<h4>Optional Information</h4>
+				<label for="add_group_address_1">Address 1:</label>
+				<input id="add_group_address_1" name="data[Group][address_1]" type="text" class="span12">
+				<label for="add_group_address_2">Address 2:</label>
+				<input id="add_group_address_2" name="data[Group][address_2]" type="text" class="span12">
 				<label for="add_group_phone_1">Phone 1:</label>
 				<input id="add_group_phone_1" name="data[Group][phone_1]" type="tel" class="span12">
 				<label for="add_group_phone_2">Phone 2:</label>
-				<input id="add_group_phone_2" name="data[Group][phone_2]" type="tel" class="span12">		
+				<input id="add_group_phone_2" name="data[Group][phone_2]" type="tel" class="span12">	
 				<label for="add_group_website">Website:</label>
 				<input id="add_group_website" name="data[Group][website]" type="url" class="span12">
 				<a href="#" data-bind="click:$root.back" class="btn btn-large btn-block">Cancel</a>
