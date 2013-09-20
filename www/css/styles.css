@@ -374,13 +374,17 @@ form textarea {
 	overflow: hidden;
 }
 
+.message p {
+	margin: 0;
+	color: #aaaaaa;
+}
+
 .sent h4 {
 	margin: 5px 35px 5px 0;
 }
 
-.message p {
-	margin: 0;
-	color: #aaaaaa;
+.sent p {
+	margin-right: 35px;
 }
 
 .approval {
