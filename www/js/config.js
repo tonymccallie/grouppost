@@ -23,7 +23,6 @@ var iosToken = null;
 var registrationId = null;
 var isMobile = true;
 var DOMAIN = 'http://grouppost.greyback.net/';
-var lastHTML = '';
 
 var devtest = /localhost/.test(window.location.hostname);		
 if(devtest) {
