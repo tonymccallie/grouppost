@@ -259,7 +259,6 @@ form textarea {
 	height:28px;
 	width:auto;
 	padding:0 10px 1px 15px;
-	background-repeat:repeat-x;
 	font-family:HelveticaNeue;
 	font-weight:400;
 	font-size:12px;
@@ -267,7 +266,9 @@ form textarea {
 	text-align:center;
 	color:#fff;
 	text-shadow:0 -1px 0 rgba(0,0,0,0.8);
-	background: url(../img/back_btn.png);
+	background: url(../img/back_btn.png) left top no-repeat;
+	border: none;
+	-webkit-box-shadow: none;
 }
 
 #ios-arrow-left:hover {
