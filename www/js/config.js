@@ -85,7 +85,9 @@ document.addEventListener('click', function(e) {
 				if (device.platform == 'android' || device.platform == 'Android') {
 					alert('one');
 					try {
-						pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
+						test = pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
+						alert(test);
+						alert('two');
 					} catch(e) {
 						alert(e);
 					}
