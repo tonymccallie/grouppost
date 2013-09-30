@@ -786,6 +786,7 @@ var loadPage = function(href, isBack, callback) {
 	var timestamp = new Date().getTime();
 	
 	$.get('views/'+href+'.html?'+timestamp,function(data) {
+		console.log(data);
 		$('#content').html(data);
 		ko.applyBindings(viewModel, $('#content').get(0));
 		scroll_refresh();
