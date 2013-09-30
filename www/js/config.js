@@ -167,9 +167,9 @@ function onNotificationGCM(e) {
 			}
 			break;
 		case 'message':
-			alert(e.message);
+			navigator.notification.alert(e.message,null,'GroupPost');
 			if(e.foreground) {
-
+				viewModel.messages().update();
 			} else {
 				
 			}
