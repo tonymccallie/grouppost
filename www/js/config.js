@@ -18,6 +18,7 @@
  */
 var myScroll;
 var pushNotification;
+var regFired = false;
 var iosToken = null;
 var registrationId = null;
 var isMobile = true;
@@ -79,9 +80,8 @@ document.addEventListener('click', function(e) {
     },
     onDeviceReady: function() {
     	setTimeout(function() {
-			if(typeof window.plugins !== 'undefined') {
+			if(((typeof window.plugins !== 'undefined')&&(!regFired) {
 				pushNotification = window.plugins.pushNotification;
-				alert(device.platform);
 				if (device.platform == 'android' || device.platform == 'Android') {
 					try {
 						pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
@@ -90,9 +90,9 @@ document.addEventListener('click', function(e) {
 						alert(e);
 					}
 				} else {
-					
 					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 				}
+				regFired = true;
 			}
     	}, 0)
 	    myScroll = new iScroll('content_wrap',{
@@ -161,14 +161,10 @@ function onNotificationAPN(event) {
 }
 
 function onNotificationGCM(e) {
-	alert(e.event);
-	console.log(e);
-	viewModel.registrationId(e);
-   /*
- switch(e.event) {
+	switch(e.event) {
 	    case 'registered':
-	    	if ( e.regID.length > 0 ) {
-				viewModel.registrationId(e.regID);
+	    	if ( e.regid.length > 0 ) {
+				viewModel.registrationId(e.regid);
 			}
 			break;
 		case 'message':
@@ -179,6 +175,5 @@ function onNotificationGCM(e) {
 			}
 			break;
     }
-*/
 }
 
