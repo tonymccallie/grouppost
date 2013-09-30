@@ -80,7 +80,7 @@ document.addEventListener('click', function(e) {
     },
     onDeviceReady: function() {
     	setTimeout(function() {
-			if(((typeof window.plugins !== 'undefined')&&(!regFired) {
+			if((typeof window.plugins !== 'undefined')&&(!regFired)) {
 				pushNotification = window.plugins.pushNotification;
 				if (device.platform == 'android' || device.platform == 'Android') {
 					try {
@@ -139,7 +139,6 @@ function iosSuccess(result) {
 }
 
 function pushError(error) {
-	alert(error);
 	navigator.notification.alert('There was a problem setting up push notifications: '+error,null,'GroupPost');
 }
 
