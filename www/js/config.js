@@ -85,7 +85,7 @@ document.addEventListener('click', function(e) {
 				if (device.platform == 'android' || device.platform == 'Android') {
 					try {
 						pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
-						alert('after register');
+						$('#loading').fadeIn();
 					} catch(e) {
 						alert(e);
 					}
@@ -162,14 +162,14 @@ function onNotificationAPN(event) {
 function onNotificationGCM(e) {
 	switch(e.event) {
 	    case 'registered':
-	    	alert(e.regid)
 	    	if ( e.regid.length > 0 ) {
 				viewModel.registrationId(e.regid);
 			}
 			break;
 		case 'message':
+			alert(e.message);
 			if(e.foreground) {
-				
+
 			} else {
 				
 			}
@@ -178,5 +178,6 @@ function onNotificationGCM(e) {
 			viewModel.registrationId(e);
 			break;
     }
+    $('#loading').fadeOut();
 }
 
