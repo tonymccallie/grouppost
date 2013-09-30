@@ -258,6 +258,30 @@ form textarea {
 	top:5px;
 	height:28px;
 	width:auto;
+	padding:0 10px 1px 15px;
+	background-repeat:repeat-x;
+	font-family:HelveticaNeue;
+	font-weight:400;
+	font-size:12px;
+	line-height:30px;
+	text-align:center;
+	color:#fff;
+	text-shadow:0 -1px 0 rgba(0,0,0,0.8);
+	background: url(../img/back_btn.png);
+}
+
+#ios-arrow-left:hover {
+	text-decoration: none;
+}
+
+#xios-arrow-left {
+	display:block;
+	position:absolute;
+	z-index:0;
+	left:15px;
+	top:5px;
+	height:28px;
+	width:auto;
 	padding:0 10px 0 6px;
 	background-repeat:repeat-x;
 	-webkit-background-size:30px;
@@ -275,11 +299,7 @@ form textarea {
 	text-shadow:0 -1px 0 rgba(0,0,0,0.8);
 }
 
-.Android #ios-arrow-left {
-	display: none;
-}
-
-#ios-arrow-left:before {
+#xios-arrow-left:before {
 	position:absolute;
 	content:' ';
 	left:-7px;
@@ -301,15 +321,15 @@ form textarea {
 	-webkit-mask-image:-webkit-gradient(linear,left top,right bottom,from(#000),color-stop(0.4,#000),color-stop(0.5,transparent),to(transparent));
 }
 
-#ios-arrow-left,#ios-arrow-left:before {
+#xios-arrow-left,#ios-arrow-left:before {
 	background-color:rgba(20,20,20,1);
 }
 
-#ios-arrow-left:hover {
+#xios-arrow-left:hover {
 	text-decoration:none;
 }
 
-#ios-arrow-left.over,#ios-arrow-left.over:before {
+#xios-arrow-left.over,#ios-arrow-left.over:before {
 	background-color:rgba(54,88,135,1);
 }
 
