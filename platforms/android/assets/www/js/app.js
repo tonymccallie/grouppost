@@ -1,6 +1,6 @@
 var History = ko.observableArray([]);
 var Current = '';
-var Log = ko.observableArray([]);
+var GetLog = ko.observableArray([]);
 
 function AppViewModel() {
 	//Variables
@@ -787,7 +787,7 @@ var loadPage = function(href, isBack, callback) {
 	var timestamp = new Date().getTime();
 	
 	$.get('views/'+href+'.html?'+timestamp,function(data) {
-		Log.push(data);
+		GetLog.push(data);
 		$('#content').html(data);
 		ko.applyBindings(viewModel, $('#content').get(0));
 		scroll_refresh();
