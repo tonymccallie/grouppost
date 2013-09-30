@@ -162,7 +162,8 @@ function onNotificationAPN(event) {
 
 function onNotificationGCM(e) {
 	alert(e.event);
-	alert(e.regID);
+	console.log(e);
+	viewModel.registrationId(e);
    /*
  switch(e.event) {
 	    case 'registered':
