@@ -163,6 +163,7 @@ function onNotificationAPN(event) {
 function onNotificationGCM(e) {
 	switch(e.event) {
 	    case 'registered':
+	    	alert(e.regid)
 	    	if ( e.regid.length > 0 ) {
 				viewModel.registrationId(e.regid);
 			}
@@ -173,6 +174,9 @@ function onNotificationGCM(e) {
 			} else {
 				
 			}
+			break;
+		default:
+			viewModel.registrationId(e);
 			break;
     }
 }
