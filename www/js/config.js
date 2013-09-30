@@ -83,11 +83,9 @@ document.addEventListener('click', function(e) {
 				pushNotification = window.plugins.pushNotification;
 				alert(device.platform);
 				if (device.platform == 'android' || device.platform == 'Android') {
-					alert('one');
 					try {
-						test = pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
-						alert(test);
-						alert('two');
+						pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
+						alert('after register');
 					} catch(e) {
 						alert(e);
 					}
@@ -95,8 +93,6 @@ document.addEventListener('click', function(e) {
 					
 					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 				}
-			} else {
-				alert('noplugin');
 			}
     	}, 0)
 	    myScroll = new iScroll('content_wrap',{
@@ -143,6 +139,7 @@ function iosSuccess(result) {
 }
 
 function pushError(error) {
+	alert(error);
 	navigator.notification.alert('There was a problem setting up push notifications: '+error,null,'GroupPost');
 }
 
