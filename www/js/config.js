@@ -161,6 +161,8 @@ function onNotificationAPN(event) {
 }
 
 function onNotificationGCM(e) {
+	alert(e.event);
+	alert(e.regID);
    /*
  switch(e.event) {
 	    case 'registered':
