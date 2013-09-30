@@ -83,8 +83,10 @@ document.addEventListener('click', function(e) {
 				pushNotification = window.plugins.pushNotification;
 				alert(device.platform);
 				if (device.platform == 'android' || device.platform == 'Android') {
+					alert('one');
 					pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
 				} else {
+					alert('two');
 					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 				}
 			} else {
@@ -125,6 +127,7 @@ document.addEventListener('click', function(e) {
 };
 
 function androidSuccess(result) {
+	alert('androidSuccess');
 	viewModel.registrationId(result);
 	navigator.notification.alert('Android Success: '+result,null,'GroupPost');
 }
