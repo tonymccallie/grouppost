@@ -889,7 +889,34 @@ var loadPage = function(href, isBack, callback) {
 	
 	var timestamp = new Date().getTime();
 	
-	$.get('views/'+href+'.html?'+timestamp,function(data) {
+	var options = {
+		url: 'views/'+href+'.html?'+timestamp,
+		success: function (data) {
+			$('#content').html(data);
+			ko.applyBindings(viewModel, $('#content').get(0));
+			scroll_refresh();
+			myScroll.scrollTo(0,0);
+			window.scrollTo(0,0);
+			Current = href;
+			if(typeof callback !== 'undefined') {
+				callback();
+			}
+			if(href == 'messages/latest') {
+				//possible pulldown/refresh
+			}
+		},
+		dataType: 'html',
+		async: true
+	};
+	
+	try {
+		$.ajax(options);
+	} catch(e) {
+		alert(e);
+	}
+	
+	/*
+$.get('views/'+href+'.html?'+timestamp,function(data) {
 		GetLog.push(data);
 		$('#content').html(data);
 		ko.applyBindings(viewModel, $('#content').get(0));
@@ -904,6 +931,7 @@ var loadPage = function(href, isBack, callback) {
 			//possible pulldown/refresh
 		}
 	})
+*/
 }
 
 var request = function(url,callback,data,validation,loader,quiet) {
