@@ -84,9 +84,13 @@ document.addEventListener('click', function(e) {
 				alert(device.platform);
 				if (device.platform == 'android' || device.platform == 'Android') {
 					alert('one');
-					pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
+					try {
+						pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
+					} catch(e) {
+						alert(e);
+					}
 				} else {
-					alert('two');
+					
 					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 				}
 			} else {
