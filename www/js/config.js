@@ -81,13 +81,14 @@ document.addEventListener('click', function(e) {
     	setTimeout(function() {
 			if(typeof window.plugins !== 'undefined') {
 				pushNotification = window.plugins.pushNotification;
+				alert(device.platform);
 				if (device.platform == 'android' || device.platform == 'Android') {
-					//pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
+					pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
 				} else {
 					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 				}
 			} else {
-				//alert('noplugin');
+				alert('noplugin');
 			}
     	}, 0)
 	    myScroll = new iScroll('content_wrap',{
