@@ -14,7 +14,7 @@
 			<ul class="nav nav-tabs nav-stacked">
 				<!-- ko foreach: messages().latest() -->
 					<li data-bind="attr: { id: 'latest_message_'+Message.id }" class="message">
-						<a href="#" data-bind="click: $root.viewMessage">
+						<a href="#" data-bind="fastClick: $root.viewMessage">
 							<h4 data-bind="text:Message.message"></h4>
 							<p data-bind="text:Group.name">Group Name</p>
 						</a>
