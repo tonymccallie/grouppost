@@ -94,7 +94,10 @@ document.addEventListener('click', function(e) {
 				}
 				regFired = true;
 			}
-    	}, 0)
+    	}, 0);
+    	if (parseFloat(window.device.version) === 7.0) {
+	    	document.body.style.marginTop = "20px";
+	    }
 	    myScroll = new iScroll('content_wrap',{
 		    bounce: false,
 		    onScrollMove: function() {
