@@ -861,7 +861,7 @@ var loadPage = function(href, isBack, callback) {
 		isBack = false;
 	}
 	var noBack = ['messages/latest','groups/list','groups/search','user/settings'];
-	var noTemplate = ['user/login','user/register','user/register_thanks','groups/add','user/privacy','user/agreement','user/reset'];
+	var noTemplate = ['user/login','user/register','user/register_thanks','user/privacy','user/agreement','user/reset'];
 
 	if(noTemplate.indexOf(href) >= 0) {
 		$('#content_wrap').css({top:topMargin+'px',bottom:0});

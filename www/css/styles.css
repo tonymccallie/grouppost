@@ -115,6 +115,7 @@ form textarea {
 
 .navbar-inner {
 	border-radius:0;
+	padding: 0;
 }
 
 #content_wrap .navbar-inner {
@@ -370,13 +371,13 @@ form textarea {
 }
 
 .three-button .btn {
-	width: 30%;
+	width: 35%;
 	padding: 4px 0;
 	font-size: 12px;
 }
 
-.three-button .btn:last-child {
-	width: 40%;
+.three-button .btn:first-child {
+	width: 30%;
 }
 
 .message {
