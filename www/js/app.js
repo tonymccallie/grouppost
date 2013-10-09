@@ -864,10 +864,10 @@ var loadPage = function(href, isBack, callback) {
 	var noTemplate = ['user/login','user/register','user/register_thanks','groups/add','user/privacy','user/agreement','user/reset'];
 
 	if(noTemplate.indexOf(href) >= 0) {
-		$('#content_wrap').css({top:0,bottom:0});
+		$('#content_wrap').css({top:topMargin+'px',bottom:0});
 		$('#header, #footer').hide();
 	} else {
-		$('#content_wrap').css({top:'40px',bottom:'70px'});
+		$('#content_wrap').css({top:(topMargin + 40)+'px',bottom:'70px'});
 		$('#header, #footer').show();
 	}
 	
