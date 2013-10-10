@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<meta name="viewport" content="user-scalable=0, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 	<title>GroupPost</title>
 	<link rel="stylesheet" type="text/css" href="css/grouppost.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="css/styles.css?2" />
 </head>
 <body>
 	<div class="navbar navbar-inverse" id="header">
 		<div class="navbar-inner">
 			<div class="container-fluid" id="logo_bar">
-				<div id="activity"><i class="icon-refresh icon-spin"></i></div>
+				<a href="#" id="refresh" data-bind="fastClick: refresh, visible: History().length == 0" class="btn"><i class="icon-refresh"></i></a>
 				<a href="#" id="ios-arrow-left" class="pull-left" data-bind="fastClick: back, visible: History().length">Back</a>
 				<img src="img/header_logo@2x.png" width="175" height="35" border="0"/>
 				<a href="#" id="compose" data-bind="fastClick: loadChooseGroup, visible: user().compose()" class="btn"><i class="icon-edit"></i></a>
@@ -43,12 +43,13 @@
 	<script type="text/javascript" src="phonegap.js"></script>
 	<script type="text/javascript" src="PushNotification.js"></script>
 	<script type="text/javascript" src="js/iscroll-lite.js"></script>
-	<script type="text/javascript" src="js/config.js?1"></script>
+	<script type="text/javascript" src="js/config.js?2"></script>
 	<script type="text/javascript" src="js/user.js?1"></script>
 	<script type="text/javascript" src="js/messages.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript">
 		app.initialize();
 	</script>
+<!-- 	<script src="http://grouppost.greyback.net:8080/target/target-script-min.js#grouppost"></script> -->
 </body>
 </html>

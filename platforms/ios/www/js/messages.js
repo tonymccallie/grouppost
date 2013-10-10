@@ -3,12 +3,23 @@ var Messages = function() {
 	self.new_messages = ko.observable(0);
 	self.latest = ko.observableArray([]);
 	self.last = ko.observable();
+	self.ids = [];
+	self.loading_more = false;
 
 	//functions
 	self.add = function(message) {
-		localStorage.setItem('latest_message',message.Message.created);
-		self.latest.unshift(message);
-		localStorage.setItem('messages',ko.toJSON(self.latest()));
+		if($.inArray(message.Message.id,self.ids)) {
+			localStorage.setItem('latest_message',message.Message.created);
+			self.latest.unshift(message);
+			self.ids.unshift(message.Message.id);
+			if(!self.loading_more) {
+				if(self.latest().length > 10) {
+					self.latest.pop();
+					self.ids.pop();
+				}
+			}
+			localStorage.setItem('messages',ko.toJSON(self.latest()));
+		}
 	};
 
 	self.update = function() {	
@@ -18,7 +29,6 @@ var Messages = function() {
 		if(localStorage.getItem('messages') !== null) {
 			//get last stored message
 			if(self.latest().length == 0) {
-				
 				var recalled_latest = ko.utils.parseJson(localStorage.getItem('messages'));
 				if(recalled_latest != null) {
 					for(i = (recalled_latest.length - 1); i >= 0; i--) {
@@ -39,6 +49,7 @@ var Messages = function() {
 		for(i = (data.length - 1); i >= 0; i--) {
 			self.add(data[i]);
 		}
+		myScroll.refresh();
 	}
 	
 	self.compose = function(formElement) {
@@ -74,5 +85,20 @@ var Messages = function() {
 		viewModel.user().update();
 		self.update();
 		loadPage('messages/latest');
+	}
+	
+	self.loadMore = function() {
+		self.loading_more = true;
+		var last_message = self.latest()[self.latest().length - 1];
+		var last_message_obj = '#latest_message_'+last_message.Message.id;
+		var scrollTo = 0 - $(last_message_obj).offset().top;
+		request('ajax/messages/latest/user:'+viewModel.user().user().id+'/stop:'+last_message.Message.created,function(messages) {
+			$.each(messages, function(index,item) {
+				self.latest.push(item);
+			});
+			myScroll.refresh();
+			myScroll.scrollTo(0,scrollTo);
+			myScroll.scrollToElement(last_message_obj);
+		});
 	}
 };

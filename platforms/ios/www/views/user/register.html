@@ -1,21 +1,28 @@
-<div class="span12">
-	<form id="register_form" method="post" action="">
-		<label for="reg_first_name">First Name:</label>
-		<input id="reg_first_name" name="data[User][first_name]" type="text" class="required">
-		<label for="reg_last_name">Last Name:</label>
-		<input id="reg_last_name" name="data[User][last_name]" type="text" class="required">
-		<label for="reg_email">Email:</label>
-		<input id="reg_email" name="data[User][email]" type="email" class="required">
-		<label for="reg_zipcode">Zipcode:</label>
-		<input id="reg_zipcode" name="data[User][zipcode]" type="text" class="required">
-		<label for="reg_passwd">Password:</label>
-		<input id="reg_passwd" name="data[User][passwd]" type="password" class="required">
-		<label for="reg_passwd_verify">Password (again):</label>
-		<input id="reg_passwd_verify" name="data[User][passwd_verify]" type="password" class="required">
-		<input type="submit" value="Register" class="btn btn-primary btn-block btn-large" />
-	</form>
-	<div class="btn-group two-button">
-		<a href="#" class="btn" data-bind="tap: loadUserAgreement">User Agreement</a>
-		<a href="#" class="btn" data-bind="tap: loadPrivacy">Privacy Policy</a>
+<div class="content">
+	<div class="row-fluid">
+		<div class="span12">
+			<form id="register_form" method="post" action="">
+				<label for="reg_first_name">First Name:</label>
+				<input id="reg_first_name" name="data[User][first_name]" type="text" class="required span12">
+				<label for="reg_last_name">Last Name:</label>
+				<input id="reg_last_name" name="data[User][last_name]" type="text" class="required span12">
+				<label for="reg_email">Email:</label>
+				<input id="reg_email" name="data[User][email]" type="email" class="required span12">
+				<label for="reg_zipcode">Zipcode:</label>
+				<input id="reg_zipcode" name="data[User][zipcode]" type="text" class="required span12">
+				<label for="reg_passwd">Password:</label>
+				<input id="reg_passwd" name="data[User][passwd]" type="password" class="required span12">
+				<label for="reg_passwd_verify">Password (again):</label>
+				<input id="reg_passwd_verify" name="data[User][passwd_verify]" type="password" class="required span12">
+				<div class="btn-group two-button">
+					<a href="#" class="btn btn-large" data-bind="tap: loadLogin">Back to Login</a>
+					<input type="submit" value="Register" class="btn btn-primary btn-large" />
+				</div>
+			</form>
+			<div class="btn-group two-button">
+				<a href="#" class="btn" data-bind="tap: loadUserAgreement">User Agreement</a>
+				<a href="#" class="btn" data-bind="tap: loadPrivacy">Privacy Policy</a>
+			</div>
+		</div>
 	</div>
 </div>

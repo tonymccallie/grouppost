@@ -18,19 +18,21 @@
  */
 var myScroll;
 var pushNotification;
+var regFired = false;
 var iosToken = null;
+var registrationId = null;
 var isMobile = true;
-var DOMAIN = 'http://www.grouppost.com/';
-/*
+var DOMAIN = 'http://grouppost.greyback.net/';
+
 var devtest = /localhost/.test(window.location.hostname);		
 if(devtest) {
 	DOMAIN = 'http://localhost/mcl/';
 }
-*/
+
+var topMargin = 0;
 
 //var DOMAIN = 'http://office.threeleaf.tv:8080/mcl/';
 //var DOMAIN = 'http://localhost/mcl/';
-
 var app = {
     // Application Constructor
     initialize: function() {
@@ -42,14 +44,20 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('backbutton',function(e) {
+	        viewModel.back();
+        }, false);
         
         //This line removes the browser feel
         document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-        document.addEventListener('click', function(e) {
+        
+        /*
+document.addEventListener('click', function(e) {
 			if (e.srcElement.target === "_blank" && e.srcElement.href.indexOf("#phonegap=external") === -1) {
 				e.srcElement.href = e.srcElement.href + "#phonegap=external";
 			}
 		}, true);
+*/
 		document.addEventListener('resume', this.resume, false);
         if (!navigator.userAgent.match(/(iPad|iPhone|Android)/)) {
         	isMobile = false;
@@ -68,20 +76,31 @@ var app = {
 					callback(converted);
 				}
 			}; 
+			$('body').addClass('desktop');
 			this.onDeviceReady();
         }
     },
     onDeviceReady: function() {
     	setTimeout(function() {
-	    	pushNotification = window.plugins.pushNotification;
-			pushNotification.register(function(result) { 
-				//GOOD
-				viewModel.iosToken(result);
-			}, function(result) { 
-				//ERROR
-			}, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
-    	}, 0)
-		
+			if((typeof window.plugins !== 'undefined')&&(!regFired)) {
+				pushNotification = window.plugins.pushNotification;
+				if (device.platform == 'android' || device.platform == 'Android') {
+					try {
+						pushNotification.register(androidSuccess, pushError,{"senderID":"254118503049","ecb":"onNotificationGCM"});
+						$('#loading').fadeIn();
+					} catch(e) {
+						alert(e);
+					}
+				} else {
+					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+					if (parseFloat(window.device.version) === 7.0) {
+						$('#header').css({top:'20px'});
+				    	topMargin = 20;
+				    }
+				}
+				regFired = true;
+			}
+    	}, 0);
 	    myScroll = new iScroll('content_wrap',{
 		    bounce: false,
 		    onScrollMove: function() {
@@ -97,15 +116,37 @@ var app = {
 				}
 			}
 	    });
+	    myScrollObj = function() {
+			self = this;
+			self.moved = false;
+			self.scrollTo = function(a,b) {return true;};
+			self.refresh = function() {return true;};
+	    }
+	    myScrollX = new myScrollObj();
     },
     loaded: function() {
 	    
     },
     resume: function() {
+    	viewModel.messages().loading_more = false;
     	viewModel.messages().update();
 	    loadPage('messages/latest');
     }
 };
+
+function androidSuccess(result) {
+	alert('androidSuccess');
+	viewModel.registrationId(result);
+	navigator.notification.alert('Android Success: '+result,null,'GroupPost');
+}
+
+function iosSuccess(result) {
+	viewModel.iosToken(result);
+}
+
+function pushError(error) {
+	navigator.notification.alert('There was a problem setting up push notifications: '+error,null,'GroupPost');
+}
 
 function onNotificationAPN(event) {
     if (event.alert) {
@@ -122,5 +163,27 @@ function onNotificationAPN(event) {
     if (event.badge) {
         pushNotification.setApplicationIconBadgeNumber(function() {}, event.badge);
     }
+}
+
+function onNotificationGCM(e) {
+	switch(e.event) {
+	    case 'registered':
+	    	if ( e.regid.length > 0 ) {
+				viewModel.registrationId(e.regid);
+			}
+			break;
+		case 'message':
+			navigator.notification.alert(e.message,null,'GroupPost');
+			if(e.foreground) {
+				viewModel.messages().update();
+			} else {
+				
+			}
+			break;
+		default:
+			viewModel.registrationId(e);
+			break;
+    }
+    $('#loading').fadeOut();
 }
 

@@ -1,5 +1,6 @@
 var History = ko.observableArray([]);
 var Current = '';
+var GetLog = ko.observableArray([]);
 
 function AppViewModel() {
 	//Variables
@@ -25,6 +26,8 @@ function AppViewModel() {
 			return self.messages().new_messages() + self.new_replies();
 		});
 		self.requests = ko.observable(0);
+		self.subgroupcount = ko.observable(0);
+		self.notifications = ko.observableArray([]);
 
 
 	//CRON JOBS / SYSTEM FUNCTIONS
@@ -85,14 +88,26 @@ function AppViewModel() {
 			messagetext = self.selectedMessage().Message.message;
 			messagetext = messagetext.replace(/(\r\n|\n|\r)/igm, "<br/>");
 			messagetext = messagetext.replace(/([^\w\/])(www\.[a-z0-9\-]+\.[a-z0-9\-]+)/igm, "$1http://$2");
-			messagetext = messagetext.replace(/([\w]+:\/\/[\w-?&;#~=\.\/\@]+[\w\/])/igm, "<a target=\"_blank\" href=\"$1\">$1</a>");//preg_replace("/([\w]+:\/\/[\w-?&;#~=\.\/\@]+[\w\/])/i","<a target=\"_blank\" href=\"$1\">$1</a>",messagetext);
+			messagetext = messagetext.replace(/([\w]+:\/\/[\w-?&;#~=\.\/\@]+[\w\/])/igm, "<a href=\"#\" onclick=\"window.open('$1','_system')\">$1</a>");//preg_replace("/([\w]+:\/\/[\w-?&;#~=\.\/\@]+[\w\/])/i","<a target=\"_blank\" href=\"$1\">$1</a>",messagetext);
 			self.selectedMessage().Message.htmlmessage = ko.observable(messagetext);
 			loadPage('messages/details');
 		}
-		self.loadGroup = function(group) {
+		self.loadGroupX = function(group) {
 			self.selectedGroup(group);
+			self.selectedSearchGroup(group.Group);
 			loadPage('groups/page/home');
 		}
+		
+		self.loadGroup = function(group) {
+			request('ajax/groups/view/group:'+group.group_id,self.processGroup);
+		}
+		
+		self.processGroup = function(group) {
+			self.selectedGroup(group);
+			self.selectedSearchGroup(group);
+			loadPage('groups/page/home');
+		}
+		
 		self.loadGroupMessages = function() {
 			request('ajax/messages/latest/user:'+ self.user().user().id +'/group:'+self.selectedGroup().Group.id,function(data) {
 				var groupMessages = [];
@@ -108,9 +123,15 @@ function AppViewModel() {
 			loadPage('messages/latest');
 		}
 		
-		self.loadChooseGroup = function() { loadPage('messages/choose_group'); }
+		self.loadChooseGroup = function() {
+			if(self.user().admin().length > 0) {
+				loadPage('messages/choose_group');
+			} else {
+				loadPage('groups/list/admin');	
+			}
+		}
 		self.loadSelectedAdmin = function() { loadPage('groups/admin/home'); }
-		self.loadAdminMore = function() { loadPage('groups/admin/more'); }
+		self.loadAdminFollowers = function() { loadPage('groups/admin/followers'); }
 		self.loadAdminAdmins = function() { loadPage('groups/admin/admins'); }
 		self.loadAdminSent = function() { loadPage('groups/admin/sent'); }
 		self.loadSelectedGroup = function() { loadPage('groups/page/home'); }
@@ -119,6 +140,10 @@ function AppViewModel() {
 		self.loadUserAgreement = function() { loadPage('user/agreement'); }
 		self.loadPrivacy = function() { loadPage('user/privacy'); }
 
+		self.refresh = function() {
+			self.messages().update();
+			self.user().update();
+		}
 
 	//Login
 		self.loadLogin = function() {
@@ -129,6 +154,50 @@ function AppViewModel() {
 			$('#login_form').validate({
 				submitHandler: self.user().login
 			});
+		}
+	
+	//Reset 
+		self.loadReset = function() {
+			loadPage('user/reset',null,self.validateReset);
+		}
+		
+		self.validateReset = function(data) {
+			$('#user_reset').validate({
+				submitHandler: self.user().reset
+			});
+		}
+		
+	//Notifications
+		self.loadNotifications = function() {
+			request('ajax/users/notifications/user:'+self.user().user().id,self.processNotifications);
+		}
+		
+		self.processNotifications = function(data) {
+			self.notifications(data);
+			loadPage('user/notifications');
+		}
+		
+		self.checkNotification = function(notification) {
+			var value = $('#'+notification.id+' i');
+			var isChecked = value.attr('class');
+
+			if(isChecked === 'icon-check-empty') {
+			//CHECK
+				notification.cssclass = 'icon-check';
+				value.attr('class','icon-check');
+			} else {
+			//UNCHECK
+				notification.cssclass = 'icon-check-empty';
+				value.attr('class','icon-check-empty');
+			}	
+		}
+		
+		self.submitNotifications = function() {
+			$('#user_notifications_json').val(ko.toJSON(self.notifications()));
+			request('ajax/users/notifications_update/user:'+self.user().user().id,function(data) {
+				navigator.notification.alert('Your notification preferences have been saved.',null,'GroupPost');
+				loadPage('user/settings');
+			},$('#user_notifications').serialize());
 		}
 
 
@@ -153,6 +222,14 @@ function AppViewModel() {
 		}
 	
 	//Compose
+		self.loadAdminCompose = function() {
+			var group = {
+				group_id:self.selectedAdmin().Group.id,
+				Group:self.selectedAdmin().Group
+			};
+			self.loadCompose(group);
+		}
+
 		self.loadCompose = function(group) {
 			self.selectedMessageGroup(group);
 			request('ajax/group_segments/list/'+group.group_id,function(data){
@@ -170,7 +247,7 @@ function AppViewModel() {
 	
 	//Load More Messages
 		self.loadMoreMessages = function() {
-			//console.log('me');
+			self.messages().loadMore();
 		}
 	
 	
@@ -367,15 +444,16 @@ function AppViewModel() {
 	
 	
 	//SubGroups Admin
-		self.loadSubGroups = function() { loadPage('groups/admin/subgroups'); }
+		self.loadSubGroups = function() { loadPage('groups/subgroups/list'); }
 		
 		self.loadSubGroup = function(subgroup) {
+			self.subgroupcount(subgroup.GroupFollow.length);
 			request('ajax/group_segments/edit/subgroup:'+subgroup.id,self.processSubGroup);
 		}
 		
 		self.processSubGroup = function(subgroup) {
 			self.selectedSubGroup(subgroup);
-			loadPage('groups/admin/subgroup');
+			loadPage('groups/subgroups/view');
 		}
 		
 		self.checkSubGroupMember = function(person) {
@@ -384,12 +462,14 @@ function AppViewModel() {
 
 			if(isChecked === 'icon-check-empty') {
 			//ADD TO SUBGROUP
+				self.subgroupcount(self.subgroupcount()+1);
 				request('ajax/group_segments/add/user:'+person.id+'/group:'+self.selectedAdmin().Group.id+'/subgroup:'+self.selectedSubGroup().GroupSegment.id,function(data) {
 					value.attr('class','icon-check');
 					$('#subgroup-'+person.id).addClass('admin');
 				});
 			} else {
 			//REMOVE FROM SUBGROUP
+				self.subgroupcount(self.subgroupcount()-1);
 				request('ajax/group_segments/remove/user:'+person.id+'/group:'+self.selectedAdmin().Group.id+'/subgroup:'+self.selectedSubGroup().GroupSegment.id,function(data) {
 					value.attr('class','icon-check-empty');
 					$('#subgroup-'+person.id).removeClass('admin');
@@ -400,7 +480,7 @@ function AppViewModel() {
 		
 	//Add SubGroup
 		self.addSubGroup = function() {
-			loadPage('groups/admin/add_subgroup', null, self.validateAddSubGroup);
+			loadPage('groups/subgroups/add', null, self.validateAddSubGroup);
 		}
 		
 		self.validateAddSubGroup = function() {
@@ -420,7 +500,37 @@ function AppViewModel() {
 			});
 		}
 	
-	
+	//Edit Subgroup
+		self.editSubGroup = function(subgroup) {
+			loadPage('groups/subgroups/edit', null, self.validateEditSubGroup);
+		}
+		
+		self.validateEditSubGroup = function() {
+			$('#edit_sub_group').validate({
+				submitHandler: self.postEditSubGroup
+			});
+		}
+		
+		self.postEditSubGroup = function(formElement) {
+			request('ajax/group_segments/rename',self.processEditSubGroup,$(formElement).serialize(),self.invalidEditSubGroup);
+		}
+		
+		self.invalidEditSubGroup = function(errors) {
+			if(typeof errors !== 'undefined') {
+				$.each(errors, function(index,value) {
+					$('#edit_group_'+index).after('<label class="error" generated="true" for="reg_email">'+value[0]+'</label>');
+				});
+			}
+		}
+		
+		self.processEditSubGroup = function(data) {
+			request('ajax/groups/admin/group:'+self.selectedAdmin().Group.id+'/user:'+self.user().user().id,function(group) {
+				self.selectedAdmin(group);
+				self.loadSubGroups();
+			});
+		}
+		
+		
 	//Delete Subgroup
 		self.deleteSubGroup = function() {
 			navigator.notification.confirm('Are you sure you want to delete this sub-group?',function(response) {
@@ -465,6 +575,7 @@ function AppViewModel() {
 		self.loadSearchGroup = function(group) {
 			var group_id = group.Group.id;
 			var following = false;
+			self.selectedSearchGroup(group);
 			$.each(self.user().groups(),function(index,item) {
 				if(item.group_id === group_id) {
 					following = true;
@@ -475,7 +586,6 @@ function AppViewModel() {
 			if(following) {
 				loadPage('groups/page/home');
 			} else {
-				self.selectedSearchGroup(group);
 				loadPage('groups/follow');	
 			}
 		}
@@ -508,12 +618,13 @@ function AppViewModel() {
 	
 	//Invite
 		self.inviteGroup = function(group) {
-			request('ajax/groups/link/group:'+group.group_id,function(data) {
+			request('ajax/groups/link/group:'+group.Group.id+'/admin:1',function(data) {
 				//navigator.notification.alert('Invites are currently disabled. The share link: '+data,null,'GroupPost');
+				window.location.href = "mailto:?body="+data;
 				try {
-					window.plugins.smsComposer.showSMSComposer('',data);
+					//window.plugins.smsComposer.showSMSComposer('',data);
 				} catch(e) {
-					console.log(e);
+					//console.log(e);
 				}
 			});
 		}
@@ -523,10 +634,11 @@ function AppViewModel() {
 		self.inviteAdmin = function(group) {
 			request('ajax/groups/link/group:'+self.selectedAdmin().Group.id+'/admin:1',function(data) {
 				//navigator.notification.alert('Invites are currently disabled. The share link: '+data,null,'GroupPost');
+				window.location.href = "mailto:?body="+data;
 				try {
-					window.plugins.smsComposer.showSMSComposer('',data);
+					//window.plugins.smsComposer.showSMSComposer('',data);
 				} catch(e) {
-					console.log(e);
+					//console.log(e);
 				}
 			});
 		}
@@ -609,23 +721,54 @@ function AppViewModel() {
 		self.invalidPassword = function(errors) {
 			if(typeof errors !== 'undefined') {
 				$.each(errors, function(index,value) {
-					$('#user_password_'+index).after('<label class="error" generated="true" for="reg_email">'+value[0]+'</label>');
+					$('#user_password_'+index).after('<label class="error" generated="true" for="reg_email">'+value+'</label>');
 				});
 			}
-
 		}
 		
-		self.processPassword = function(user) {
+		self.processPassword = function(user) {	
 			navigator.notification.alert('You have successfully updated your password.',null,'GroupPost');
 			self.user().update();
 			self.loadMessages();
 		}
 
+	//Change email
+		self.loadEmail = function() {
+			loadPage('user/email',null,self.validateEmail);
+		}
+
+		self.validateEmail = function() {
+			$('#user_email').validate({
+				submitHandler: self.postEmail
+			});
+		}
+		
+		self.postEmail = function(formElement) {
+			request('ajax/users/email',self.processEmail,$(formElement).serialize(),self.invalidEmail);
+		}
+		
+		self.invalidEmail = function(errors) {
+			if(typeof errors !== 'undefined') {
+				$.each(errors, function(index,value) {
+					$('#user_email_'+index).after('<label class="error" generated="true" for="reg_email">'+value+'</label>');
+				});
+			}
+		}
+		
+		self.processEmail = function(user) {	
+			navigator.notification.alert('An email has been sent to the new address to verify the account.',null,'GroupPost');
+			self.user().update();
+			self.loadMessages();
+		}
 
 	//Sent Messages
 		self.loadSent = function() {
 			//CHECKADMIN
-			request('ajax/users/sent/user:'+self.user().user().id,self.processSent);
+			if(self.user().admin().length > 0) {
+				request('ajax/users/sent/user:'+self.user().user().id,self.processSent);
+			} else {
+				loadPage('groups/list/admin');
+			}
 		}
 		
 		self.processSent = function(messages) {
@@ -690,8 +833,9 @@ ko.bindingHandlers.tap = {
 				return false;
 			});
 		} else {
-			$(element).bind('click', function() {
+			$(element).bind('click', function(evt) {
 				valueAccessor()(viewModel, event, element);
+				return false;
 			});
 		}
 	}
@@ -704,7 +848,7 @@ ko.applyBindings(viewModel);
 //AJAX Frame Loader
 var loadPage = function(href, isBack, callback) {
 	if(viewModel.user().user === null) {
-		if((href != 'user/register')&&(href != 'user/register_thanks')&&(href != 'user/privacy')&&(href != 'user/agreement')) {
+		if((href != 'user/register')&&(href != 'user/register_thanks')&&(href != 'user/privacy')&&(href != 'user/agreement')&&(href != 'user/reset')) {
 			href = 'user/login';
 		}
 	}
@@ -717,13 +861,13 @@ var loadPage = function(href, isBack, callback) {
 		isBack = false;
 	}
 	var noBack = ['messages/latest','groups/list','groups/search','user/settings'];
-	var noTemplate = ['user/login','user/register','user/register_thanks','groups/add','user/privacy','user/agreement'];
+	var noTemplate = ['user/login','user/register','user/register_thanks','user/privacy','user/agreement','user/reset'];
 
 	if(noTemplate.indexOf(href) >= 0) {
-		$('#content_wrap').css({top:0,bottom:0});
+		$('#content_wrap').css({top:topMargin+'px',bottom:0});
 		$('#header, #footer').hide();
 	} else {
-		$('#content_wrap').css({top:'40px',bottom:'70px'});
+		$('#content_wrap').css({top:(topMargin + 40)+'px',bottom:'70px'});
 		$('#header, #footer').show();
 	}
 	
@@ -745,7 +889,35 @@ var loadPage = function(href, isBack, callback) {
 	
 	var timestamp = new Date().getTime();
 	
-	$.get('views/'+href+'.html?'+timestamp,function(data) {
+	var options = {
+		url: 'views/'+href+'.html?'+timestamp,
+		success: function (data) {
+			$('#content').html(data);
+			ko.applyBindings(viewModel, $('#content').get(0));
+			scroll_refresh();
+			myScroll.scrollTo(0,0);
+			window.scrollTo(0,0);
+			Current = href;
+			if(typeof callback !== 'undefined') {
+				callback();
+			}
+			if(href == 'messages/latest') {
+				//possible pulldown/refresh
+			}
+		},
+		dataType: 'html',
+		async: true
+	};
+	
+	try {
+		$.ajax(options);
+	} catch(e) {
+		alert(e);
+	}
+	
+	/*
+$.get('views/'+href+'.html?'+timestamp,function(data) {
+		GetLog.push(data);
 		$('#content').html(data);
 		ko.applyBindings(viewModel, $('#content').get(0));
 		scroll_refresh();
@@ -759,6 +931,7 @@ var loadPage = function(href, isBack, callback) {
 			//possible pulldown/refresh
 		}
 	})
+*/
 }
 
 var request = function(url,callback,data,validation,loader,quiet) {
@@ -773,7 +946,7 @@ var request = function(url,callback,data,validation,loader,quiet) {
 	if(loader) {
 		$('#loading').show();
 	} else {
-		$('#activity').show();
+		$('#refresh i').addClass('icon-spin');
 	}
 	
 	var options = {
@@ -794,12 +967,13 @@ var request = function(url,callback,data,validation,loader,quiet) {
 				}
 			}
 		},
-		complete: function(jqXHR, textStatus) {
+		complete: function(jqXHR, textStatus, errorThrown) {
 			if((textStatus != 'success')&&(!quiet)) {
-				navigator.notification.alert('There was a problem communicating with the server.',null,'GroupPost');
+				//alert(errorThrown);
+				//navigator.notification.alert('There was a problem communicating with the server.',null,'GroupPost');
 			}
 			$('#loading').fadeOut();
-			$('#activity').fadeOut();
+			$('#refresh i').removeClass('icon-spin');
 		},
 		dataType: 'json',
 		async: true
@@ -812,7 +986,11 @@ var request = function(url,callback,data,validation,loader,quiet) {
 		options.data = data;
 	}
 
-	$.ajax(options);
+	try {
+		$.ajax(options);
+	} catch(e) {
+		alert(e);
+	}
 }
 
 var scroll_refresh = function() {
@@ -838,6 +1016,10 @@ $(function() {
 	$('input, textarea').live('blur', function(e) {
 		//window.scrollTo(0,0);
 	});
+	
+	if(typeof device !== 'undefined') {
+		$('body').addClass(device.platform);
+	}
 });
 	
 	

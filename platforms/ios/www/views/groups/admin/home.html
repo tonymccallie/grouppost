@@ -1,46 +1,26 @@
-<div class="span12">
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner centered">
-			<div class="navbar-buttons">
-				<div class="btn-group three-button">
-					<a href="#" class="btn btn-primary">Followers</a>
-					<a href="#" class="btn" data-bind="tap: loadAdminSent">Sent Messages</a>
-					<a href="#" class="btn" data-bind="tap: loadAdminMore">More</a>
-				</div>
+<div class="navbar">
+	<div class="navbar-inner centered">
+		<div class="navbar-buttons">
+			<div class="btn-group three-button">
+				<a href="#" class="btn btn-primary">Manage</a>
+				<a href="#" class="btn" data-bind="tap: loadAdminFollowers">Followers <span data-bind="visible: requests() > 0, text: requests" class="badge badge-important"><i class="icon-ok"></i></span></a>
+				<a href="#" class="btn" data-bind="tap: loadAdminSent">Sent Messages</a>
 			</div>
 		</div>
 	</div>
-	<div class="navbar-spacer"></div>
-	<div data-bind="with: selectedAdmin">
-		<h4 data-bind="text: Group.name">Group name</h4>
-		<a href="#" data-bind="tap: $root.inviteAdmin" class="btn btn-large btn-block btn-primary">Invite</a>
-		<div class="navbar-spacer"></div>
-		<div data-bind="visible: Approval.length > 0">
-			<p>Followers to approve <button class="btn" data-bind="click: $root.markallRequests"><i class="icon-check"></i> Mark All</button></p>
-			<div class="approvals">
-			<!-- ko foreach: Approval -->				
-				<a class="btn btn-block approval" data-bind="tap: $root.checkRequest, attr:{ id: 'follow-'+GroupFollow.id}">
-					<i class="icon-check-empty"></i> <span data-bind="text: first_name + ' ' + last_name">Name</span>
-					<input type="hidden" data-bind="value:GroupFollow.id" />
-				</a>
-			<!-- /ko -->
+</div>
+<div class="content">
+	<div class="row-fluid">
+		<div class="span12">
+			<div data-bind="with: selectedAdmin">
+				<h4 data-bind="text: Group.name">Group name</h4>
+				<a href="#" data-bind="tap: $root.loadAdminCompose" class="btn btn-large btn-block btn-primary">Send a Message</a>
+				<a href="#" data-bind="tap: $root.inviteAdmin" class="btn btn-large btn-block btn-primary">Invite</a>
+				<div class="navbar-spacer"></div>
+				<a href="#" class="btn btn-large btn-block" data-bind="click: $root.loadGroupEdit">Edit Group Information</a>
+				<a href="#" class="btn btn-large btn-block" data-bind="click: $root.loadAdminAdmins">Manage Group Admins</a>
+				<a href="#" class="btn btn-large btn-block" data-bind="click: $root.loadSubGroups">Manage Sub-Groups</a>
 			</div>
-			<div class="btn-group two-button">
-				<a href="#" class="btn btn-large" data-bind="tap: $root.removeRequests"><i class="icon-remove"></i> Remove</a>
-				<a href="#" class="btn btn-large btn-primary" data-bind="tap: $root.approveRequests"><i class="icon-check"></i> Approve</a>
-			</div>
-			<div class="navbar-spacer"></div>
-		</div>	
-		<div data-bind="visible: Follower.length > 0">
-			<p data-bind="text: 'Followers (' + Follower.length + ')'">Followers</p>
-			<ul class="nav nav-tabs nav-stacked">
-				<!-- ko foreach: Follower -->
-				<li class="follower">
-					<h4 data-bind="text: first_name + ' ' + last_name">Test User</h4>
-					<button data-bind="tap: $root.removeFollower" class="btn pull-right">Remove</button>
-				</li>
-				<!-- /ko -->
-			</ul>
 		</div>
 	</div>
 </div>
