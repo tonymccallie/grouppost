@@ -95,8 +95,8 @@ document.addEventListener('click', function(e) {
 				} else {
 					pushNotification.register(iosSuccess, pushError, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 					if (parseFloat(window.device.version) === 7.0) {
-						$('#header').css({top:'20px'});
-				    	topMargin = 20;
+						//$('#header').css({top:'20px'});
+				    	//topMargin = 20;
 				    }
 				}
 				regFired = true;
