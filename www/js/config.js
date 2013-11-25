@@ -59,6 +59,7 @@ document.addEventListener('click', function(e) {
 		}, true);
 */
 		document.addEventListener('resume', this.resume, false);
+		document.addEventListener('online', this.online, false);
         if (!navigator.userAgent.match(/(iPad|iPhone|Android)/)) {
         	isMobile = false;
 			navigator.notification = {
@@ -128,9 +129,17 @@ document.addEventListener('click', function(e) {
 	    
     },
     resume: function() {
-    	viewModel.messages().loading_more = false;
-    	viewModel.messages().update();
-	    loadPage('messages/latest');
+    	setTimeout(function() {
+	    	viewModel.messages().loading_more = false;
+	    	viewModel.messages().update();
+		    loadPage('messages/latest');
+		},0);
+    },
+    online: function() {
+    	setTimeout(function() {
+	    	viewModel.messages().loading_more = false;
+	    	viewModel.messages().update();
+		},0);
     }
 };
 

@@ -403,7 +403,7 @@ function AppViewModel() {
 				if(response === 1) {	
 					request('ajax/groups/unfollow/user:'+person.id+'/group:'+self.selectedAdmin().Group.id,function(data) {
 						navigator.notification.alert(data,null,'GroupPost');
-						self.loadAdmin({group_id:ko.observable(self.selectedAdmin().Group.id)});
+						self.loadAdmin({group_id:self.selectedAdmin().Group.id});
 					});
 				}
 			}, 'GroupPost');
@@ -569,7 +569,8 @@ function AppViewModel() {
 		
 		self.processSearch = function(data) {
 			self.searchResults(data);
-			scroll_refresh();
+			loadPage('groups/search',null,self.validateSearch);
+			//scroll_refresh();
 		}
 		
 		self.loadSearchGroup = function(group) {
@@ -961,7 +962,7 @@ var request = function(url,callback,data,validation,loader,quiet) {
 						validation(data.data);
 						break;
 					default:
-						console.log(data);
+						console.log([url,data]);
 						navigator.notification.alert('There was an error:' + data.message,null,'GroupPost');
 						break;
 				}
