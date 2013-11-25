@@ -124,6 +124,7 @@ document.addEventListener('click', function(e) {
 			self.refresh = function() {return true;};
 	    }
 	    myScrollX = new myScrollObj();
+	    loadPage('messages/latest');
     },
     loaded: function() {
 	    

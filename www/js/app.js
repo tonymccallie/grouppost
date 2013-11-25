@@ -59,6 +59,7 @@ function AppViewModel() {
 			if(localStorage.getItem('user') !== null) {
 				self.user().update();
 				self.messages().update();
+				loadPage('messages/latest');
 				//self.update_user();
 			} else {
 				
