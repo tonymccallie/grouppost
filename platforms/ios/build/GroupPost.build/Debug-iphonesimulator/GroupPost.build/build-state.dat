@@ -1,633 +1,0 @@
-TGroupPost
-v5
-r1
-cCheck dependencies
-cProcessInfoPlistFile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Info.plist GroupPost/GroupPost-Info.plist
-cPhaseScriptExecution "Copy www directory" /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Script-304B58A110DAC018002A0835.sh
-cCpResource GroupPost/config.xml build/GroupPost.app/config.xml
-cCpResource GroupPost/Resources/icons/icon-72.png build/GroupPost.app/icon-72.png
-cCpResource GroupPost/Resources/icons/icon.png build/GroupPost.app/icon.png
-cCpResource GroupPost/Resources/icons/icon@2x.png build/GroupPost.app/icon@2x.png
-cCpResource GroupPost/Resources/Capture.bundle build/GroupPost.app/Capture.bundle
-cCopyStringsFile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/en.lproj/Localizable.strings GroupPost/Resources/en.lproj/Localizable.strings
-cCopyStringsFile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/es.lproj/Localizable.strings GroupPost/Resources/es.lproj/Localizable.strings
-cCompileXIB /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.xib
-cCopyStringsFile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/de.lproj/Localizable.strings GroupPost/Resources/de.lproj/Localizable.strings
-cCopyStringsFile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/se.lproj/Localizable.strings GroupPost/Resources/se.lproj/Localizable.strings
-cCpResource GroupPost/Resources/splash/Default-Landscape@2x~ipad.png build/GroupPost.app/Default-Landscape@2x~ipad.png
-cCpResource GroupPost/Resources/splash/Default-Landscape~ipad.png build/GroupPost.app/Default-Landscape~ipad.png
-cCpResource GroupPost/Resources/splash/Default-Portrait@2x~ipad.png build/GroupPost.app/Default-Portrait@2x~ipad.png
-cCpResource GroupPost/Resources/splash/Default-Portrait~ipad.png build/GroupPost.app/Default-Portrait~ipad.png
-cCpResource GroupPost/Resources/splash/Default@2x~iphone.png build/GroupPost.app/Default@2x~iphone.png
-cCpResource GroupPost/Resources/splash/Default~iphone.png build/GroupPost.app/Default~iphone.png
-cCpResource GroupPost/Resources/splash/Default-568h@2x~iphone.png build/GroupPost.app/Default-568h@2x~iphone.png
-cCpResource GroupPost/Resources/icons/icon-72@2x.png build/GroupPost.app/icon-72@2x.png
-cProcessPCH /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/GroupPost-Prefix-ghulchbfrslyclbueqvvqpljbxuj/GroupPost-Prefix.pch.pth GroupPost/GroupPost-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/AppDelegate.o /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/main.o /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/MainViewController.o /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/GroupPost normal i386
-cGenerateDSYMFile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app.dSYM /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/GroupPost
-cTouch /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk
-c0000000051C2110B0000000000000110
-t1371672843
-s272
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
-c00000000510707C100000000001EB540
-t1359415233
-s2012480
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/AddressBook.framework/AddressBook
-c00000000510707C000000000000C1030
-t1359415232
-s790576
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
-c00000000510707C10000000000193640
-t1359415233
-s1652288
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
-c00000000510707C100000000000226E0
-t1359415233
-s141024
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
-c00000000510707C200000000003D4DF0
-t1359415234
-s4017648
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
-c00000000510707C20000000000215DB0
-t1359415234
-s2186672
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c00000000510707C20000000000228FE0
-t1359415234
-s2265056
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
-c00000000510707C2000000000009C590
-t1359415234
-s640400
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreMedia.framework/CoreMedia
-c00000000510707C20000000000085620
-t1359415234
-s546336
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c00000000510707C400000000003DDFA0
-t1359415236
-s4054944
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
-c00000000510707C500000000002CFBE0
-t1359415237
-s2948064
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
-c00000000510707C600000000002DBA50
-t1359415238
-s2996816
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-c00000000510707C700000000000BCC20
-t1359415239
-s773152
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/OpenAL.framework/OpenAL
-c00000000510707C70000000000030EB0
-t1359415239
-s200368
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
-c00000000510707C800000000001D5750
-t1359415240
-s1922896
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
-c00000000510707C8000000000006CC50
-t1359415240
-s445520
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c00000000510707CB0000000000AB6230
-t1359415243
-s11231792
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/AppDelegate.m
-c0000000051DD71F000000000000013D8
-t1373467120
-s5080
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.m
-c0000000051DD71F0000000000000126A
-t1373467120
-s4714
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.xib
-c0000000051DD71F00000000000001759
-t1373467120
-s5977
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/GroupPost-Prefix.pch
-c0000000051DD71F000000000000003C3
-t1373467120
-s963
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/Capture.bundle
-c0000000051DD71F0000000000000030E
-t1373467120
-s782
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/de.lproj/Localizable.strings
-c0000000051DD71F000000000000004BF
-t1373467120
-s1215
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/en.lproj/Localizable.strings
-c0000000051DD71F000000000000004AA
-t1373467120
-s1194
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/es.lproj/Localizable.strings
-c0000000051DD71F000000000000004B7
-t1373467120
-s1207
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/icons/icon-72.png
-c0000000051DD71F00000000000001350
-t1373467120
-s4944
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/icons/icon-72@2x.png
-c0000000051DD71F00000000000002DBA
-t1373467120
-s11706
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/icons/icon.png
-c0000000051DD71F00000000000000F3E
-t1373467120
-s3902
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/icons/icon@2x.png
-c0000000051DD71F00000000000001EBD
-t1373467120
-s7869
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/se.lproj/Localizable.strings
-c0000000051DD71F000000000000004AB
-t1373467120
-s1195
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default-568h@2x~iphone.png
-c0000000051DD71F000000000000085B1
-t1373467120
-s34225
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default-Landscape@2x~ipad.png
-c0000000051DD71F00000000000012DF4
-t1373467120
-s77300
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default-Landscape~ipad.png
-c0000000051DD71F00000000000008877
-t1373467120
-s34935
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default-Portrait@2x~ipad.png
-c0000000051DD71F00000000000012B02
-t1373467120
-s76546
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default-Portrait~ipad.png
-c0000000051DD71F000000000000085E6
-t1373467120
-s34278
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default@2x~iphone.png
-c0000000051DD71F00000000000007323
-t1373467120
-s29475
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default~iphone.png
-c0000000051DD71F0000000000000289A
-t1373467120
-s10394
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/config.xml
-c0000000051DD71F10000000000001043
-t1373467121
-s4163
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/main.m
-c0000000051DD71F0000000000000045B
-t1373467120
-s1115
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app.dSYM
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Capture.bundle
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default-568h@2x~iphone.png
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default-Landscape@2x~ipad.png
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default-Landscape~ipad.png
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default-Portrait@2x~ipad.png
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default-Portrait~ipad.png
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default@2x~iphone.png
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default~iphone.png
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/GroupPost
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Info.plist
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/MainViewController.nib
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/PkgInfo
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/config.xml
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/de.lproj/Localizable.strings
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/en.lproj/Localizable.strings
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/es.lproj/Localizable.strings
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/icon-72.png
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/icon-72@2x.png
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/icon.png
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/icon@2x.png
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/se.lproj/Localizable.strings
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/AppDelegate.o
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/GroupPost.LinkFileList
-c0000000051DD71FA00000000000001C2
-t1373467130
-s450
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/MainViewController.o
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/main.o
-t2
-s0
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Script-304B58A110DAC018002A0835.sh
-c0000000051DD71FA000000000000051A
-t1373467130
-s1306
-
-N/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/libCordova.a
-c0000000051DD71FA000000000036F940
-t1373467130
-s3602752
-
-N/var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/GroupPost-Prefix-ghulchbfrslyclbueqvvqpljbxuj/GroupPost-Prefix.pch.pth
-t2
-s0
-
-NGroupPost/GroupPost-Info.plist
-c0000000051DD71F10000000000000745
-t1373467121
-s1861
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesc685b37aa98db741^ff25b57aa98db741^---0#1#0#--18"Check dependencies36"775A4A28-D25A-4584-B9E7-D8755390B29D-
-
-CCompileC build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/AppDelegate.o /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s395159935.211530
-e395159935.332789
-r1
-xCompileC
-xbuild/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/AppDelegate.o
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/AppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-o/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/AppDelegate.m:80:25: warning: 'useSplashScreen' is deprecated: Deprecated in Cordova 2.5. Add/Remove the SplashScreen plugin instead of setting this property. [-Wdeprecated-declarations]
-o    self.viewController.useSplashScreen = YES;
-o                        ^
-o/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/include/Cordova/CDVViewController.h:46:47: note: 'useSplashScreen' declared here
-o@property (nonatomic, readwrite, assign) BOOL useSplashScreen CDV_DEPRECATED(2.5, "Add/Remove the SplashScreen plugin instead of setting this property.");
-o                                              ^
-o1 warning generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Compile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/AppDelegate.ma853367fa98db741^7b30557fa98db741^-701"/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/AppDelegate.m:80:25: warning: 'useSplashScreen' is deprecated: Deprecated in Cordova 2.5. Add/Remove the SplashScreen plugin instead of setting this property. [-Wdeprecated-declarations]    self.viewController.useSplashScreen = YES;                        ^/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/include/Cordova/CDVViewController.h:46:47: note: 'useSplashScreen' declared here@property (nonatomic, readwrite, assign) BOOL useSplashScreen CDV_DEPRECATED(2.5, "Add/Remove the SplashScreen plugin instead of setting this property.");                                              ^1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@128"'useSplashScreen' is deprecated: Deprecated in Cordova 2.5. Add/Remove the SplashScreen plugin instead of setting this property.-395159935#18446744073709551615#0#1(2@31"'useSplashScreen' declared here-395159935#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@110"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/CordovaLib/Classes/CDVViewController.h0000000000000000^45#46#45#46#1826#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@103"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/AppDelegate.m0000000000000000^79#24#79#24#2694#0#12"Deprecations--0#0#0#-19%DVTDocumentLocation4@103"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/AppDelegate.m0000000000000000^3807"CompileC build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/AppDelegate.o GroupPost/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-generated-files.hmap -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-own-target-headers.hmap -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-all-target-headers.hmap -iquote /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-project-headers.hmap -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/include -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/usr/local/lib/include -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/UninstalledProducts/include -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/DerivedSources/i386 -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/DerivedSources -F/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build -include /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/GroupPost-Prefix-ghulchbfrslyclbueqvvqpljbxuj/GroupPost-Prefix.pch -MMD -MT dependencies -MF /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/AppDelegate.d --serialize-diagnostics /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/AppDelegate.dia -c /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/AppDelegate.m -o /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/AppDelegate.o36"78A71447-B890-4E2D-A5EE-9459B8CF8F45-
-
-CCompileC build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/MainViewController.o /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s395159935.211556
-e395159935.307164
-r1
-xCompileC
-xbuild/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/MainViewController.o
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"Compile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.mf04e367fa98db741^baa44e7fa98db741^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.m0000000000000000^3849"CompileC build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/MainViewController.o GroupPost/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-generated-files.hmap -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-own-target-headers.hmap -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-all-target-headers.hmap -iquote /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-project-headers.hmap -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/include -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/usr/local/lib/include -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/UninstalledProducts/include -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/DerivedSources/i386 -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/DerivedSources -F/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build -include /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/GroupPost-Prefix-ghulchbfrslyclbueqvvqpljbxuj/GroupPost-Prefix.pch -MMD -MT dependencies -MF /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/MainViewController.d --serialize-diagnostics /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/MainViewController.dia -c /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.m -o /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/MainViewController.o36"17EBAA21-1991-4A2B-8F6D-50A183C67EB1-
-
-CCompileC build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/main.o /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s395159935.211545
-e395159935.245856
-r1
-xCompileC
-xbuild/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/main.o
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/main.m3f58367fa98db741^f6ef3e7fa98db741^---0#0#0#-19%DVTDocumentLocation2@88"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/main.m0000000000000000^3749"CompileC build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/main.o GroupPost/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-generated-files.hmap -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-own-target-headers.hmap -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-all-target-headers.hmap -iquote /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-project-headers.hmap -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/include -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/usr/local/lib/include -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/UninstalledProducts/include -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/DerivedSources/i386 -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/DerivedSources -F/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build -include /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/GroupPost-Prefix-ghulchbfrslyclbueqvvqpljbxuj/GroupPost-Prefix.pch -MMD -MT dependencies -MF /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/main.dia -c /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/main.m -o /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/main.o36"EAF286F8-DDCF-4F11-BEBF-C601C6E3C69D-
-
-CCompileXIB /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.xib
-s395159931.932117
-e395159934.848712
-r1
-xCompileXIB
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.xib
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"Compiling /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.xib01c3ee7ba98db741^1747d97ea98db741^---0#0#0#-19%DVTDocumentLocation2@112"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.xib0000000000000000^1101"CompileXIB GroupPost/Classes/MainViewController.xib    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/MainViewController.nib /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Classes/MainViewController.xib --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk36"517C3CCE-5658-48BC-A089-9D500F4E6BD6-
-
-CCopyStringsFile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/de.lproj/Localizable.strings GroupPost/Resources/de.lproj/Localizable.strings
-s395159931.960120
-e395159931.972195
-r1
-xCopyStringsFile
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/de.lproj/Localizable.strings
-xGroupPost/Resources/de.lproj/Localizable.strings
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Copy GroupPost/Resources/de.lproj/Localizable.strings4df4f57ba98db741^8ae3f87ba98db741^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/de.lproj/Localizable.strings0000000000000000^750"CopyStringsFile build/GroupPost.app/de.lproj/Localizable.strings GroupPost/Resources/de.lproj/Localizable.strings    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/de.lproj -- GroupPost/Resources/de.lproj/Localizable.strings36"4413802C-FA3D-4216-BF42-6BA6A1D70B8B-
-
-CCopyStringsFile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/en.lproj/Localizable.strings GroupPost/Resources/en.lproj/Localizable.strings
-s395159931.930281
-e395159931.957917
-r1
-xCopyStringsFile
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/en.lproj/Localizable.strings
-xGroupPost/Resources/en.lproj/Localizable.strings
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Copy GroupPost/Resources/en.lproj/Localizable.stringsdc4bee7ba98db741^db50f57ba98db741^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/en.lproj/Localizable.strings0000000000000000^750"CopyStringsFile build/GroupPost.app/en.lproj/Localizable.strings GroupPost/Resources/en.lproj/Localizable.strings    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/en.lproj -- GroupPost/Resources/en.lproj/Localizable.strings36"5D7C1516-F450-4172-A594-8D5C0420D3DC-
-
-CCopyStringsFile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/es.lproj/Localizable.strings GroupPost/Resources/es.lproj/Localizable.strings
-s395159931.930590
-e395159931.971103
-r1
-xCopyStringsFile
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/es.lproj/Localizable.strings
-xGroupPost/Resources/es.lproj/Localizable.strings
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Copy GroupPost/Resources/es.lproj/Localizable.stringsc059ee7ba98db741^05a5f87ba98db741^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/es.lproj/Localizable.strings0000000000000000^750"CopyStringsFile build/GroupPost.app/es.lproj/Localizable.strings GroupPost/Resources/es.lproj/Localizable.strings    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/es.lproj -- GroupPost/Resources/es.lproj/Localizable.strings36"C0FD7BFD-B3EB-4416-9D99-B4ADFC211433-
-
-CCopyStringsFile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/se.lproj/Localizable.strings GroupPost/Resources/se.lproj/Localizable.strings
-s395159931.972534
-e395159931.977019
-r1
-xCopyStringsFile
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/se.lproj/Localizable.strings
-xGroupPost/Resources/se.lproj/Localizable.strings
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Copy GroupPost/Resources/se.lproj/Localizable.stringsa018f97ba98db741^c51efa7ba98db741^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/se.lproj/Localizable.strings0000000000000000^750"CopyStringsFile build/GroupPost.app/se.lproj/Localizable.strings GroupPost/Resources/se.lproj/Localizable.strings    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/se.lproj -- GroupPost/Resources/se.lproj/Localizable.strings36"2417121D-849A-4BBF-AA57-A7144BB1A0F1-
-
-CCpResource GroupPost/Resources/Capture.bundle build/GroupPost.app/Capture.bundle
-s395159931.929204
-e395159932.023536
-r1
-xCpResource
-xGroupPost/Resources/Capture.bundle
-xbuild/GroupPost.app/Capture.bundle
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Copy build/GroupPost.app/Capture.bundle8203ee7ba98db741^240d067ca98db741^---0#0#0#-19%DVTDocumentLocation2@106"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Capture.bundle000000000080d041^769"CpResource GroupPost/Resources/Capture.bundle build/GroupPost.app/Capture.bundle    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/Capture.bundle /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"64A99342-B892-44D6-9359-26D1E85B6FC1-
-
-CCpResource GroupPost/Resources/icons/icon-72.png build/GroupPost.app/icon-72.png
-s395159931.924057
-e395159931.929018
-r1
-xCpResource
-xGroupPost/Resources/icons/icon-72.png
-xbuild/GroupPost.app/icon-72.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Copy build/GroupPost.app/icon-72.png7dcbec7ba98db741^95d4ed7ba98db741^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/icon-72.png000000000080d041^772"CpResource GroupPost/Resources/icons/icon-72.png build/GroupPost.app/icon-72.png    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/icons/icon-72.png /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"164768AD-5288-4B7B-85A7-3CC03745F031-
-
-CCpResource GroupPost/Resources/icons/icon-72@2x.png build/GroupPost.app/icon-72@2x.png
-s395159932.032568
-e395159932.036820
-r1
-xCpResource
-xGroupPost/Resources/icons/icon-72@2x.png
-xbuild/GroupPost.app/icon-72@2x.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Copy build/GroupPost.app/icon-72@2x.png207c087ca98db741^21ad097ca98db741^---0#0#0#-19%DVTDocumentLocation2@106"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/icon-72@2x.png000000000080d041^787"CpResource "GroupPost/Resources/icons/icon-72@2x.png" "build/GroupPost.app/icon-72@2x.png"    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/icons/icon-72@2x.png" /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"A2D931DC-A8F0-4201-A43D-1BB35695CE67-
-
-CCpResource GroupPost/Resources/icons/icon.png build/GroupPost.app/icon.png
-s395159931.925071
-e395159931.930832
-r1
-xCpResource
-xGroupPost/Resources/icons/icon.png
-xbuild/GroupPost.app/icon.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection33"Copy build/GroupPost.app/icon.png3049ed7ba98db741^4357ee7ba98db741^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/icon.png000000000080d041^763"CpResource GroupPost/Resources/icons/icon.png build/GroupPost.app/icon.png    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/icons/icon.png /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"79C47CE0-C929-4B3C-9AD4-7A33041E274E-
-
-CCpResource GroupPost/Resources/icons/icon@2x.png build/GroupPost.app/icon@2x.png
-s395159931.925728
-e395159931.929658
-r1
-xCpResource
-xGroupPost/Resources/icons/icon@2x.png
-xbuild/GroupPost.app/icon@2x.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Copy build/GroupPost.app/icon@2x.pngc11ced7ba98db741^c008ee7ba98db741^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/icon@2x.png000000000080d041^778"CpResource "GroupPost/Resources/icons/icon@2x.png" "build/GroupPost.app/icon@2x.png"    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/icons/icon@2x.png" /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"15A046BD-33C0-416C-B00F-909B9C15AF99-
-
-CCpResource GroupPost/Resources/splash/Default-568h@2x~iphone.png build/GroupPost.app/Default-568h@2x~iphone.png
-s395159932.027777
-e395159932.039212
-r1
-xCpResource
-xGroupPost/Resources/splash/Default-568h@2x~iphone.png
-xbuild/GroupPost.app/Default-568h@2x~iphone.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Copy build/GroupPost.app/Default-568h@2x~iphone.png213f077ca98db741^ab090a7ca98db741^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default-568h@2x~iphone.png000000000080d041^825"CpResource "GroupPost/Resources/splash/Default-568h@2x~iphone.png" "build/GroupPost.app/Default-568h@2x~iphone.png"    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default-568h@2x~iphone.png" /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"671FADC9-CA68-4F67-8ABD-C4726BB8404A-
-
-CCpResource GroupPost/Resources/splash/Default-Landscape@2x~ipad.png build/GroupPost.app/Default-Landscape@2x~ipad.png
-s395159931.973757
-e395159931.997789
-r1
-xCpResource
-xGroupPost/Resources/splash/Default-Landscape@2x~ipad.png
-xbuild/GroupPost.app/Default-Landscape@2x~ipad.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Copy build/GroupPost.app/Default-Landscape@2x~ipad.png8577f97ba98db741^9790ff7ba98db741^---0#0#0#-19%DVTDocumentLocation2@121"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default-Landscape@2x~ipad.png000000000080d041^834"CpResource "GroupPost/Resources/splash/Default-Landscape@2x~ipad.png" "build/GroupPost.app/Default-Landscape@2x~ipad.png"    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default-Landscape@2x~ipad.png" /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"B74AD8FC-70CA-4583-AFEE-AC96422D530F-
-
-CCpResource GroupPost/Resources/splash/Default-Landscape~ipad.png build/GroupPost.app/Default-Landscape~ipad.png
-s395159931.978563
-e395159932.020466
-r1
-xCpResource
-xGroupPost/Resources/splash/Default-Landscape~ipad.png
-xbuild/GroupPost.app/Default-Landscape~ipad.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Copy build/GroupPost.app/Default-Landscape~ipad.png7aa7fa7ba98db741^bb48057ca98db741^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default-Landscape~ipad.png000000000080d041^825"CpResource "GroupPost/Resources/splash/Default-Landscape~ipad.png" "build/GroupPost.app/Default-Landscape~ipad.png"    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default-Landscape~ipad.png" /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"C45EF2B4-2E63-45BC-8E9F-F364A985DF7A-
-
-CCpResource GroupPost/Resources/splash/Default-Portrait@2x~ipad.png build/GroupPost.app/Default-Portrait@2x~ipad.png
-s395159932.000177
-e395159932.022925
-r1
-xCpResource
-xGroupPost/Resources/splash/Default-Portrait@2x~ipad.png
-xbuild/GroupPost.app/Default-Portrait@2x~ipad.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Copy build/GroupPost.app/Default-Portrait@2x~ipad.png1a30007ca98db741^9cde057ca98db741^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default-Portrait@2x~ipad.png000000000080d041^831"CpResource "GroupPost/Resources/splash/Default-Portrait@2x~ipad.png" "build/GroupPost.app/Default-Portrait@2x~ipad.png"    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default-Portrait@2x~ipad.png" /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"8FACC22A-D4D1-486C-B122-3D21057207EE-
-
-CCpResource GroupPost/Resources/splash/Default-Portrait~ipad.png build/GroupPost.app/Default-Portrait~ipad.png
-s395159932.021941
-e395159932.025710
-r1
-xCpResource
-xGroupPost/Resources/splash/Default-Portrait~ipad.png
-xbuild/GroupPost.app/Default-Portrait~ipad.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection50"Copy build/GroupPost.app/Default-Portrait~ipad.png51c1057ca98db741^4a97067ca98db741^---0#0#0#-19%DVTDocumentLocation2@117"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default-Portrait~ipad.png000000000080d041^822"CpResource "GroupPost/Resources/splash/Default-Portrait~ipad.png" "build/GroupPost.app/Default-Portrait~ipad.png"    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default-Portrait~ipad.png" /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"DB56CB46-38BF-4CA2-8DCE-7EF69B95F95B-
-
-CCpResource GroupPost/Resources/splash/Default@2x~iphone.png build/GroupPost.app/Default@2x~iphone.png
-s395159932.024666
-e395159932.031736
-r1
-xCpResource
-xGroupPost/Resources/splash/Default@2x~iphone.png
-xbuild/GroupPost.app/Default@2x~iphone.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection46"Copy build/GroupPost.app/Default@2x~iphone.pnge882067ca98db741^4c34087ca98db741^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default@2x~iphone.png000000000080d041^810"CpResource "GroupPost/Resources/splash/Default@2x~iphone.png" "build/GroupPost.app/Default@2x~iphone.png"    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default@2x~iphone.png" /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"18FB4534-8986-4DBD-A8AD-7976E55C6860-
-
-CCpResource GroupPost/Resources/splash/Default~iphone.png build/GroupPost.app/Default~iphone.png
-s395159932.025840
-e395159932.031318
-r1
-xCpResource
-xGroupPost/Resources/splash/Default~iphone.png
-xbuild/GroupPost.app/Default~iphone.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection43"Copy build/GroupPost.app/Default~iphone.pngb2bd067ca98db741^d330087ca98db741^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Default~iphone.png000000000080d041^801"CpResource "GroupPost/Resources/splash/Default~iphone.png" "build/GroupPost.app/Default~iphone.png"    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/Resources/splash/Default~iphone.png" /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"D5457ABF-370F-43E2-89A4-E16A8C532DAA-
-
-CCpResource GroupPost/config.xml build/GroupPost.app/config.xml
-s395159931.923231
-e395159931.927709
-r1
-xCpResource
-xGroupPost/config.xml
-xbuild/GroupPost.app/config.xml
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection35"Copy build/GroupPost.app/config.xml037bec7ba98db741^d384ed7ba98db741^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/config.xml000000000080d041^737"CpResource GroupPost/config.xml build/GroupPost.app/config.xml    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/config.xml /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"CAE74BD2-9EEC-4BFC-8863-BE6A5BE52E69-
-
-CGenerateDSYMFile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app.dSYM /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/GroupPost
-s395159935.706052
-e395159935.870666
-r1
-xGenerateDSYMFile
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app.dSYM
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/GroupPost
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Generate /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app.dSYM49d7b47fa98db741^58e5de7fa98db741^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app.dSYM000000000080d041^751"GenerateDSYMFile build/GroupPost.app.dSYM build/GroupPost.app/GroupPost    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/GroupPost -o /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app.dSYM36"CCCE5A0E-94E3-41C2-9619-760E2F643580-
-
-CLd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/GroupPost normal i386
-s395159935.339726
-e395159935.699178
-r1
-xLd
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/GroupPost
-xnormal
-xi386
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Link /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/GroupPostcf13577fa98db741^dbfdb27fa98db741^---0#0#0#--1968"Ld build/GroupPost.app/GroupPost normal i386    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -L/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build -F/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build -filelist /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/GroupPost.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -weak_framework CoreFoundation -weak_framework UIKit -weak_framework AVFoundation -weak_framework CoreMedia -weak-lSystem -force_load /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/libCordova.a -ObjC -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=5.0 -framework CoreLocation -framework ImageIO -framework OpenAL -framework AssetsLibrary /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/libCordova.a -framework Foundation -weak_framework UIKit -framework CoreGraphics -framework AddressBook -framework AddressBookUI -framework AudioToolbox -weak_framework AVFoundation -framework CFNetwork -framework MediaPlayer -framework QuartzCore -framework SystemConfiguration -framework MobileCoreServices -weak_framework CoreMedia -framework CoreLocation -o /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/GroupPost36"ADFC4238-7FEA-4496-ADB3-4249BA232A79-
-
-CPhaseScriptExecution "Copy www directory" /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Script-304B58A110DAC018002A0835.sh
-s395159930.729993
-e395159931.914733
-r1
-xPhaseScriptExecution
-xCopy www directory
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Script-304B58A110DAC018002A0835.sh
-o
-oreal	0m1.144s
-ouser	0m0.251s
-osys	0m0.304s
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Run custom shell script 'Copy www directory'2657bd7aa98db741^5724ea7ba98db741^-42"real	0m1.144suser	0m0.251ssys	0m0.304s3(21%IDEActivityLogMessage2@14"real	0m1.144s-395159931#1#14#-0#-----2@14"user	0m0.251s-395159931#15#14#-0#-----2@13"sys	0m0.304s-395159931#29#13#-0#-----0#0#0#--21248"PhaseScriptExecution "Copy www directory" build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Script-304B58A110DAC018002A0835.sh    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER tonymccallie    setenv ALWAYS_SEARCH_USER_PATHS NO    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS i386    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_UNIVERSAL_IPHONE_OS i386    setenv AVAILABLE_PLATFORMS "iphonesimulator macosx iphoneos"    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build    setenv BUILD_ROOT /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build    setenv BUILD_STYLE     setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build    setenv CACHE_ROOT /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501    setenv CCHROOT /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLANG_ENABLE_OBJC_ARC YES    setenv CLANG_WARN_CONSTANT_CONVERSION YES    setenv CLANG_WARN_ENUM_CONVERSION YES    setenv CLANG_WARN_INT_CONVERSION YES    setenv CLANG_WARN__DUPLICATE_METHOD_MATCH YES    setenv CLASS_FILE_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/CompositeSDKs    setenv COMPRESS_PNG_FILES YES    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build    setenv CONFIGURATION_TEMP_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator    setenv CONTENTS_FOLDER_PATH GroupPost.app    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH i386    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf-with-dsym    setenv DEFAULT_COMPILER com.apple.compilers.llvm.clang.1_0    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Applications/Xcode.app/Contents/Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Applications/Xcode.app/Contents/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/Developer/Library    setenv DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Tools    setenv DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH GroupPost.app/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/GroupPost.dst    setenv DT_TOOLCHAIN_DIR /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain    setenv DWARF_DSYM_FILE_NAME GroupPost.app.dSYM    setenv DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT NO    setenv DWARF_DSYM_FOLDER_PATH /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build    setenv EFFECTIVE_PLATFORM_NAME -iphonesimulator    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".DS_Store .svn .git .hg CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH GroupPost.app/Executables    setenv EXECUTABLE_FOLDER_PATH GroupPost.app    setenv EXECUTABLE_NAME GroupPost    setenv EXECUTABLE_PATH GroupPost.app/GroupPost    setenv FILE_LIST /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH GroupPost.app/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME GroupPost.app    setenv GCC3_VERSION 3.3    setenv GCC_C_LANGUAGE_STANDARD c99    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OBJC_LEGACY_DISPATCH YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER GroupPost/GroupPost-Prefix.pch    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_THUMB_SUPPORT NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION com.apple.compilers.llvm.clang.1_0    setenv GCC_VERSION_IDENTIFIER com_apple_compilers_llvm_clang_1_0    setenv GCC_WARN_ABOUT_RETURN_TYPE YES    setenv GCC_WARN_UNINITIALIZED_AUTOS YES    setenv GCC_WARN_UNUSED_VARIABLE YES    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/include\" \"/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/usr/local/lib/include\" \"/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/UninstalledProducts/include\" \"/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build\""    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE GroupPost/GroupPost-Info.plist    setenv INFOPLIST_OUTPUT_FORMAT binary    setenv INFOPLIST_PATH GroupPost.app/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH GroupPost.app/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/GroupPost.dst/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER tonymccallie    setenv INSTALL_PATH /Applications    setenv INSTALL_ROOT /tmp/GroupPost.dst    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH GroupPost.app/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-LinkMap-normal-i386.txt    setenv LD_NO_PIE NO    setenv LEGACY_DEVELOPER_DIR /Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer    setenv LEX lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build\" "    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_i386 /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal/i386/GroupPost.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH GroupPost.app/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 12E55    setenv MAC_OS_X_VERSION_ACTUAL 1084    setenv MAC_OS_X_VERSION_MAJOR 1080    setenv MAC_OS_X_VERSION_MINOR 0804    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJC_ABI_VERSION 2    setenv OBJECT_FILE_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Objects-normal    setenv OBJROOT /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_LDFLAGS "-weak_framework CoreFoundation -weak_framework UIKit -weak_framework AVFoundation -weak_framework CoreMedia -weak-lSystem -force_load /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/libCordova.a -ObjC"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode.app/Contents/Developer/Headers /Applications/Xcode.app/Contents/Developer/SDKs /Applications/Xcode.app/Contents/Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH GroupPost.app/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS objective-c    setenv PKGINFO_FILE_PATH /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/PkgInfo    setenv PKGINFO_PATH GroupPost.app/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr    setenv PLATFORM_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform    setenv PLATFORM_NAME iphonesimulator    setenv PLATFORM_PREFERRED_ARCH i386    setenv PLATFORM_PRODUCT_BUILD_VERSION 10B141    setenv PLATFORM_VERSION_AVAILABILITY_H_FORMAT 60100    setenv PLIST_FILE_OUTPUT_FORMAT binary    setenv PLUGINS_FOLDER_PATH GroupPost.app/PlugIns    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH GroupPost.app/PrivateHeaders    setenv PRODUCT_NAME GroupPost    setenv PRODUCT_SETTINGS_PATH /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/GroupPost-Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT GroupPost    setenv PROJECT_DERIVED_FILE_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/DerivedSources    setenv PROJECT_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PROJECT_FILE_PATH /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost.xcodeproj    setenv PROJECT_NAME GroupPost    setenv PROJECT_TEMP_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build    setenv PROJECT_TEMP_ROOT /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build    setenv PUBLIC_HEADERS_FOLDER_PATH GroupPost.app/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_HG_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH GroupPost.app/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk    setenv SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk    setenv SDK_NAME iphonesimulator6.1    setenv SDK_PRODUCT_BUILD_VERSION 10B141    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHALLOW_BUNDLE YES    setenv SHARED_DERIVED_FILE_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH GroupPost.app/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH GroupPost.app/SharedSupport    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv SRCROOT /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv STRINGS_FILE_OUTPUT_ENCODING binary    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SUPPORTED_DEVICE_FAMILIES "1 2"    setenv SUPPORTED_PLATFORMS "iphonesimulator iphoneos"    setenv SYMROOT /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Applications/Xcode.app/Contents/Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Applications/Xcode.app/Contents/Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETED_DEVICE_FAMILY 1,2    setenv TARGETNAME GroupPost    setenv TARGET_BUILD_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build    setenv TARGET_NAME GroupPost    setenv TARGET_TEMP_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build    setenv TEMP_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build    setenv TEMP_FILES_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build    setenv TEMP_FILE_DIR /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build    setenv TEMP_ROOT /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build    setenv TEST_AFTER_BUILD NO    setenv TOOLCHAINS com.apple.dt.toolchain.XcodeDefault    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH GroupPost.app    setenv UNSTRIPPED_PRODUCT NO    setenv USER tonymccallie    setenv USER_APPS_DIR /Users/tonymccallie/Applications    setenv USER_LIBRARY_DIR /Users/tonymccallie/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS i386    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH GroupPost.app/version.plist    setenv VERSION_INFO_BUILDER tonymccallie    setenv VERSION_INFO_FILE GroupPost_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:GroupPost  PROJECT:GroupPost-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME GroupPost.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Applications/Xcode.app/Contents/Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 4H1503    setenv XCODE_VERSION_ACTUAL 0463    setenv XCODE_VERSION_MAJOR 0400    setenv XCODE_VERSION_MINOR 0460    setenv YACC yacc    /bin/sh -c /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/Script-304B58A110DAC018002A0835.sh36"0762BD96-35E1-477F-9304-0E6903390945-
-
-CProcessInfoPlistFile /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Info.plist GroupPost/GroupPost-Info.plist
-s395159930.715850
-e395159930.719395
-r1
-xProcessInfoPlistFile
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Info.plist
-xGroupPost/GroupPost-Info.plist
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection38"Process GroupPost/GroupPost-Info.plist5a64b77aa98db741^132ab87aa98db741^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/GroupPost-Info.plist0000000000000000^800"ProcessInfoPlistFile build/GroupPost.app/Info.plist GroupPost/GroupPost-Info.plist    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    builtin-infoPlistUtility GroupPost/GroupPost-Info.plist -genpkginfo /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app/Info.plist36"0EB0AC79-3019-42EA-B728-AB71E9CADBC1-
-
-CProcessPCH /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/GroupPost-Prefix-ghulchbfrslyclbueqvvqpljbxuj/GroupPost-Prefix.pch.pth GroupPost/GroupPost-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s395159934.857551
-e395159935.204736
-r1
-xProcessPCH
-x/var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/GroupPost-Prefix-ghulchbfrslyclbueqvvqpljbxuj/GroupPost-Prefix.pch.pth
-xGroupPost/GroupPost-Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile GroupPost/GroupPost-Prefix.pch3db8db7ea98db741^0e69347fa98db741^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/GroupPost-Prefix.pch0000000000000000^3756"ProcessPCH /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/GroupPost-Prefix-ghulchbfrslyclbueqvvqpljbxuj/GroupPost-Prefix.pch.pth GroupPost/GroupPost-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-generated-files.hmap -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-own-target-headers.hmap -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-all-target-headers.hmap -iquote /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/GroupPost-project-headers.hmap -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/include -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/usr/local/lib/include -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/UninstalledProducts/include -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/DerivedSources/i386 -I/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.build/Debug-iphonesimulator/GroupPost.build/DerivedSources -F/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build --serialize-diagnostics /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/GroupPost-Prefix-ghulchbfrslyclbueqvvqpljbxuj/GroupPost-Prefix.pch.dia -c /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/GroupPost/GroupPost-Prefix.pch -o /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/GroupPost-Prefix-ghulchbfrslyclbueqvvqpljbxuj/GroupPost-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/zm/y8sr8g556_x8rmvgyzv1pbkw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/GroupPost-Prefix-ghulchbfrslyclbueqvvqpljbxuj/GroupPost-Prefix.pch.d36"CBED3E42-DBA0-49F6-B3B8-C152EBC05C6D-
-
-CTouch /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app
-s395159935.878624
-e395159935.889690
-r1
-xTouch
-x/Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection81"Touch /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app020ee17fa98db741^2ec7e37fa98db741^---0#0#0#--533"Touch build/GroupPost.app    cd /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/tonymccallie/Development/android-sdk-macosx/platform-tools:/Users/tonymccallie/Development/android-sdk-macosx/tools"    /usr/bin/touch -c /Users/tonymccallie/Sites/grouppost-2.9.0/platforms/ios/build/GroupPost.app36"D8B2DDC8-CFAC-43D5-A4D6-000F62B962F5-
-
